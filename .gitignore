@@ -11,3 +11,4 @@ data/processed/
 *.parquet
 *.json
 venv/
+learning/
