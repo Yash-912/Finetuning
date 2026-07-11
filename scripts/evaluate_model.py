@@ -9,6 +9,7 @@ Produces:
 """
 from __future__ import annotations
 
+import argparse
 import json
 import logging
 import sys
@@ -40,13 +41,20 @@ from src.utils.config import load_config
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)-8s | %(message)s")
 logger = logging.getLogger("evaluate_model")
 
-MODEL_DIR = "models/qwen-injection-detector/best"
-TEST_PATH = "data/processed/test.parquet"
-BASELINE_PATH = "eval/baseline_metrics.json"
+MODEL_DIR = Path("models/qwen-injection-detector/best")
+BASELINE_PATH = Path("eval/baseline_metrics.json")
 OUTPUT_DIR = Path("eval")
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Evaluate fine-tuned Qwen2 injection detector")
+    parser.add_argument("--test-path", type=str, default="data/processed/test.parquet",
+                        help="Path to test parquet file (default: data/processed/test.parquet)")
+    parser.add_argument("--output-prefix", type=str, default="qwen",
+                        help="Prefix for output files (default: qwen)")
+    args = parser.parse_args()
+    test_path = args.test_path
+    output_prefix = args.output_prefix
     cfg = load_config("configs/training_config.yaml")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -54,7 +62,7 @@ def main():
 
     base_name = cfg["model"]["base_model_name"]
     max_length = cfg["model"]["max_length"]
-    model_dir = Path(MODEL_DIR)
+    model_dir = MODEL_DIR
 
     temperature_path = model_dir / "temperature.pt"
     if temperature_path.exists():
@@ -99,8 +107,8 @@ def main():
     torch.cuda.synchronize()
     logger.info("Warm-up complete.")
 
-    logger.info("Loading test data: %s", TEST_PATH)
-    df = pd.read_parquet(TEST_PATH)
+    logger.info("Loading test data: %s", test_path)
+    df = pd.read_parquet(test_path)
     logger.info("Test samples: %d", len(df))
 
     sources = df["source"].values
@@ -142,8 +150,9 @@ def main():
 
     cm = confusion_matrix(gt, preds)
 
+    dataset_name = Path(test_path).stem
     print(f"\n{'='*60}")
-    print("  QWEN2-1.5B FINE-TUNED RESULTS")
+    print(f"  QWEN2-1.5B QLORA — {dataset_name.upper()}")
     print(f"{'='*60}")
     print(f"  Temperature:    {temperature:.4f}")
     print(f"  Accuracy:       {acc:.4f}")
@@ -158,8 +167,9 @@ def main():
     print(f"  Actual Benign  {cm[0,0]:>5d}  {cm[0,1]:>3d}")
     print(f"         Inj     {cm[1,0]:>5d}  {cm[1,1]:>3d}")
 
+    eval_name = Path(test_path).stem
     results = {
-        "model": "qwen2-1.5b-qlora",
+        "model": f"qwen2-1.5b-qlora_{eval_name}",
         "temperature": round(float(temperature), 4),
         "test_size": len(df),
         "accuracy": round(float(acc), 4),
@@ -205,10 +215,10 @@ def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    qwen_path = OUTPUT_DIR / "qwen_metrics.json"
-    with open(qwen_path, "w") as f:
+    metrics_path = OUTPUT_DIR / f"{output_prefix}_metrics.json"
+    with open(metrics_path, "w") as f:
         json.dump(results, f, indent=2)
-    logger.info("Metrics saved: %s", qwen_path)
+    logger.info("Metrics saved: %s", metrics_path)
 
     baseline_path = Path(BASELINE_PATH)
     if baseline_path.exists():
@@ -272,7 +282,7 @@ def main():
         ax.set_ylabel("Actual")
         ax.set_title(f"Confusion Matrix — Qwen2-1.5B QLoRA\n(acc={acc:.2%})")
         fig.tight_layout()
-        fig_path = OUTPUT_DIR / "qwen_confusion.png"
+        fig_path = OUTPUT_DIR / f"{output_prefix}_confusion.png"
         fig.savefig(fig_path, dpi=150)
         logger.info("Confusion matrix saved: %s", fig_path)
     except ImportError:
