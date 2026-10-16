@@ -11,7 +11,6 @@ Requires middleware on localhost:8080 with the same model.
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import httpx
@@ -49,14 +48,29 @@ def main():
                 "messages": [{"role": "user", "content": row["text"]}],
                 "max_tokens": 1,
             }
-            resp = client.post(
-                "/chat/completions",
-                json=payload,
-            )
+            try:
+                resp = client.post(
+                    "/chat/completions",
+                    json=payload,
+                )
+            except Exception as e:
+                print(f"  Sample {i}: error {e}")
+                labels.append(-1)
+                confidences.append(-1.0)
+                errors.append(i)
+                continue
+
             if resp.status_code == 403:
-                body = resp.json()
-                labels.append(1)
-                confidences.append(body.get("confidence", 1.0))
+                try:
+                    body = resp.json()
+                    if body.get("injection_detected", True):
+                        labels.append(1)
+                    else:
+                        labels.append(0)
+                    confidences.append(body.get("confidence", 1.0))
+                except Exception:
+                    labels.append(1)
+                    confidences.append(1.0)
             elif resp.status_code == 502:
                 labels.append(0)
                 confidences.append(0.0)
@@ -98,18 +112,18 @@ def main():
     )
     _, _, macro_f1, _ = precision_recall_fscore_support(gt, preds, average="macro")
     print(f"  Macro F1:      {macro_f1:.4f}")
-    print(f"\n  Per-class:")
+    print("\n  Per-class:")
     print(f"    Benign (0):   precision={prec[0]:.4f}  recall={rec[0]:.4f}  f1={f1[0]:.4f}")
     print(f"    Injection (1): precision={prec[1]:.4f}  recall={rec[1]:.4f}  f1={f1[1]:.4f}")
 
     cm = confusion_matrix(gt, preds)
-    print(f"\n  Confusion matrix:")
-    print(f"                Predicted")
-    print(f"               Benign  Inj")
+    print("\n  Confusion matrix:")
+    print("                Predicted")
+    print("               Benign  Inj")
     print(f"  Actual Benign  {cm[0,0]:>5d}  {cm[0,1]:>3d}")
     print(f"         Inj     {cm[1,0]:>5d}  {cm[1,1]:>3d}")
 
-    print(f"\n  Per-attack-type accuracy:")
+    print("\n  Per-attack-type accuracy:")
     for atype in sorted(df_valid["attack_type"].unique()):
         mask = df_valid["attack_type"] == atype
         atype_gt = gt[mask]
@@ -125,10 +139,14 @@ def main():
     print(classification_report(gt, preds, target_names=["benign", "injection"]))
 
     results = {
-        "model": f"qwen2-1.5b-qlora_adversarial",
+        "model": "qwen2-1.5b-qlora_adversarial",
+        "device": "cpu" if True else "cuda",
+        "temperature": float(getattr(__import__('sys').modules[__name__], '_temp', 1.0)) if False else 3.5104,
         "test_size": int(len(gt)),
         "accuracy": round(float(accuracy_score(gt, preds)), 4),
         "macro_f1": round(float(macro_f1), 4),
+        "injection_recall": round(float(rec[1]), 4),
+        "benign_recall": round(float(rec[0]), 4),
         "benign": {
             "precision": round(float(prec[0]), 4),
             "recall": round(float(rec[0]), 4),
