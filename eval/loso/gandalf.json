@@ -1,0 +1,10 @@
+{
+  "n": 340,
+  "classes_present": [
+    1
+  ],
+  "accuracy": 0.9853,
+  "source": "gandalf",
+  "max_train_samples": 4000,
+  "epochs": 1
+}

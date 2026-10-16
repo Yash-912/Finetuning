@@ -62,6 +62,8 @@ An end-to-end ML system that detects prompt injection attacks in LLM traffic. It
 | `scripts/calibrate.py` | Temperature scaling via grid search + bounded NLL minimization |
 | `scripts/evaluate_baseline.py` | Zero-shot evaluation of `deepset/deberta-v3-base-injection` on the test set |
 | `scripts/evaluate_model.py` | Test-set evaluation of the fine-tuned model + baseline comparison + confusion matrix plot |
+| `scripts/shortcut_baseline.py` | Source-only and TF-IDF baselines + leave-one-source-out for TF-IDF (CPU, seconds) |
+| `scripts/eval_loso.py` | Leave-one-source-out training/eval for the Qwen QLoRA model (resumable, GPU) |
 | `scripts/build_adversarial_eval.py` | 47 hand-authored adversarial examples across 12 attack categories |
 | `scripts/eval_adversarial.py` | Replays the adversarial set through the live middleware HTTP API |
 | `middleware/app.py` | FastAPI reverse proxy with hard-block/soft-flag modes and Prometheus metrics |

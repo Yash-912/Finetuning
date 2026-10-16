@@ -1,0 +1,10 @@
+{
+  "n": 8676,
+  "classes_present": [
+    0
+  ],
+  "accuracy": 0.569,
+  "source": "no_robots",
+  "max_train_samples": 4000,
+  "epochs": 1
+}

@@ -75,7 +75,8 @@ Real-time guardrail to detect prompt injection attacks in LLM application reques
 
 ### Limitations
 
-- **Adversarial robustness**: Quantitative adversarial evaluation pending (blocked by Windows page file fragmentation on training machine). The adversarial eval set covers 47 examples across 12 attack categories.
+- **Adversarial robustness**: On a 47-example hand-written set (12 attack categories) run through the live middleware, accuracy is 89.4% and injection recall 95.4%. Benign-lookalike recall is only 1 of 4, so benign prompts that merely mention words like "ignore" are over-blocked. The set is small and written by the model's author, so treat it as a smoke test, not a benchmark.
+- **Source skew**: Most benign training data comes from one source (`no_robots`); see "Generalization to unseen sources".
 - **no_robots collapse**: The zero-shot baseline achieves only 27% accuracy on the no_robots subset (all benign, classified as injection). The fine-tuned model resolves this.
 - **Indirect injection**: Not evaluated. The model inspects user messages only, not retrieved context.
 - **Domain shift**: Performance on out-of-distribution prompts (different LLM, different task domains) is unknown.

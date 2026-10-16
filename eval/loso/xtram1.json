@@ -1,0 +1,10 @@
+{
+  "n": 2035,
+  "classes_present": [
+    1
+  ],
+  "accuracy": 0.8034,
+  "source": "xtram1",
+  "max_train_samples": 4000,
+  "epochs": 1
+}

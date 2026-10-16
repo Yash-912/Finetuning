@@ -1,0 +1,58 @@
+{
+  "deepset": {
+    "n": 496,
+    "classes_present": [
+      0,
+      1
+    ],
+    "accuracy": 0.8145,
+    "macro_f1": 0.7785,
+    "roc_auc": 0.9173,
+    "source": "deepset",
+    "max_train_samples": 4000,
+    "epochs": 1
+  },
+  "gandalf": {
+    "n": 340,
+    "classes_present": [
+      1
+    ],
+    "accuracy": 0.9853,
+    "source": "gandalf",
+    "max_train_samples": 4000,
+    "epochs": 1
+  },
+  "no_robots": {
+    "n": 8676,
+    "classes_present": [
+      0
+    ],
+    "accuracy": 0.569,
+    "source": "no_robots",
+    "max_train_samples": 4000,
+    "epochs": 1
+  },
+  "s_labs": {
+    "n": 10416,
+    "classes_present": [
+      0,
+      1
+    ],
+    "accuracy": 0.8811,
+    "macro_f1": 0.8793,
+    "roc_auc": 0.9516,
+    "source": "s_labs",
+    "max_train_samples": 4000,
+    "epochs": 1
+  },
+  "xtram1": {
+    "n": 2035,
+    "classes_present": [
+      1
+    ],
+    "accuracy": 0.8034,
+    "source": "xtram1",
+    "max_train_samples": 4000,
+    "epochs": 1
+  }
+}
