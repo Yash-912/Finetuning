@@ -38,24 +38,25 @@ class ReviewQueue:
 
     def add(
         self,
-        request_id: int,
         text: str,
         production_pred: int,
         production_conf: float,
         shadow_pred: Optional[int] = None,
         shadow_conf: Optional[float] = None,
-    ):
+    ) -> int:
+        """Insert a row and return its database-assigned request_id (never collides across restarts)."""
         now = datetime.now(timezone.utc).isoformat()
-        self._conn.execute(
+        cur = self._conn.execute(
             """
-            INSERT OR IGNORE INTO reviews
-                (request_id, text, production_pred, production_conf,
+            INSERT INTO reviews
+                (text, production_pred, production_conf,
                  shadow_pred, shadow_conf, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?)
             """,
-            (request_id, text, production_pred, production_conf, shadow_pred, shadow_conf, now),
+            (text, production_pred, production_conf, shadow_pred, shadow_conf, now),
         )
         self._conn.commit()
+        return cur.lastrowid
 
     def pull_unreviewed(self, limit: int = 20) -> list[dict]:
         rows = self._conn.execute(

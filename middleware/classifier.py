@@ -15,23 +15,16 @@ logger = logging.getLogger("classifier")
 
 
 class InjectionClassifier:
-    _instance = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance._initialized = False
-        return cls._instance
+    """One instance per adapter directory; production and shadow must be distinct objects."""
 
     def __init__(self, model_path: str = "models/qwen-injection-detector/best", max_length: int = 512):
-        if self._initialized:
-            return
-        self._initialized = True
+        self._ready = False
         self.model_path = Path(model_path)
         self.max_length = max_length
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self._load_model()
         self._warmup()
+        self._ready = True
 
     def _load_model(self):
         logger.info("Loading tokenizer...")
@@ -76,7 +69,8 @@ class InjectionClassifier:
         dummy = "Warm-up inference."
         for _ in range(3):
             self.predict(dummy)
-        torch.cuda.synchronize()
+        if self.device.type == "cuda":
+            torch.cuda.synchronize()
         logger.info("Warm-up complete.")
 
     @torch.no_grad()
@@ -97,4 +91,4 @@ class InjectionClassifier:
 
     @property
     def is_ready(self) -> bool:
-        return self._initialized
+        return self._ready

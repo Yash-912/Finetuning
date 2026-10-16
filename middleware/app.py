@@ -68,7 +68,6 @@ async def lifespan(app: FastAPI):
 
     app.state.shadow_classifier = None
     app.state.review_queue = None
-    app.state.request_id_counter = 0
 
     classifier = InjectionClassifier(
         model_path=settings.model_path,
@@ -130,9 +129,6 @@ async def chat_completion(request: Request):
 
     text = extract_text(messages)
 
-    app.state.request_id_counter += 1
-    request_id = app.state.request_id_counter
-
     start = time.perf_counter()
     label, confidence = classifier.predict(text)
     elapsed = time.perf_counter() - start
@@ -157,7 +153,6 @@ async def chat_completion(request: Request):
     review_queue = app.state.review_queue
     if review_queue is not None:
         review_queue.add(
-            request_id=request_id,
             text=text,
             production_pred=label,
             production_conf=confidence,
