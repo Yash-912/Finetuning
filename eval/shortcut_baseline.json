@@ -1,0 +1,56 @@
+{
+  "source_only": {
+    "accuracy": 0.7729,
+    "macro_f1": 0.6711,
+    "majority_label_by_source": {
+      "deepset": 0,
+      "gandalf": 1,
+      "no_robots": 0,
+      "s_labs": 0,
+      "xtram1": 1
+    }
+  },
+  "tfidf_in_dist": {
+    "accuracy": 0.969,
+    "macro_f1": 0.9651
+  },
+  "tfidf_loso": {
+    "deepset": {
+      "n": 496,
+      "classes_present": [
+        0,
+        1
+      ],
+      "accuracy": 0.748
+    },
+    "gandalf": {
+      "n": 340,
+      "classes_present": [
+        1
+      ],
+      "accuracy": 0.9412
+    },
+    "no_robots": {
+      "n": 8676,
+      "classes_present": [
+        0
+      ],
+      "accuracy": 0.6051
+    },
+    "s_labs": {
+      "n": 10416,
+      "classes_present": [
+        0,
+        1
+      ],
+      "accuracy": 0.7851
+    },
+    "xtram1": {
+      "n": 2035,
+      "classes_present": [
+        1
+      ],
+      "accuracy": 0.7302
+    }
+  }
+}
