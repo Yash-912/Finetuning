@@ -135,6 +135,25 @@ Test set (n = 2,197), from `eval/comparison.json`:
 
 The baseline collapses on out-of-distribution benign data (26.96% accuracy on the `no_robots` source), which is exactly the failure mode fine-tuning fixes.
 
+### Generalization: how much of 98.7% is real?
+
+The corpus is source-skewed: `no_robots` is all benign, `xtram1` and `gandalf` are all injection, and only `s_labs` and `deepset` have both classes. So I measured how far dataset style alone goes (`scripts/shortcut_baseline.py`) and how the model does on a source it never trained on (`scripts/eval_loso.py`):
+
+| Check | Result |
+|---|---|
+| Predict from source label only, no text | 77.3% accuracy |
+| TF-IDF + logistic regression, standard split | 96.9% (Qwen: 98.7%) |
+
+| Held-out source | Qwen QLoRA | TF-IDF |
+|---|---|---|
+| gandalf (injection only) | 98.5% | 94.1% |
+| s_labs | 88.1% (AUC 0.952) | 78.5% |
+| deepset | 81.5% (AUC 0.917) | 74.8% |
+| xtram1 (injection only) | 80.3% | 73.0% |
+| no_robots (benign only) | 56.9% | 60.5% |
+
+Takeaways: the model generalizes better than a bag-of-words baseline (so it learned more than source style), but 98.7% is an in-distribution number. Folds trained on 4,000 samples for 1 epoch, uncalibrated, so these are lower bounds. The weakest case is benign text unlike the training mix: without `no_robots`, 43% of ordinary instructions are flagged. Next step: more diverse benign data.
+
 ### Adversarial Evaluation
 
 47 hand-crafted examples spanning 12 categories (direct injection, DAN/roleplay, hypothetical framing, Base64/ROT13/leetspeak, multi-language FR/ZH/HI/KO, system-prompt override, payload splitting, few-shot poisoning, benign lookalikes, zero-width/Unicode tricks, structured-data payloads, token smuggling). Run through the live middleware (`eval_adversarial.py`):

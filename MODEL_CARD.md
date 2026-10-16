@@ -55,14 +55,35 @@ Real-time guardrail to detect prompt injection attacks in LLM application reques
 | Macro F1 | 0.9857 |
 | Injection Recall | 97.83% |
 | Benign Recall | 99.18% |
-| ROC AUC | 0.9986 |
+| ROC AUC | 0.9979 |
+
+These are **in-distribution** numbers (same five sources in train and test). See "Generalization to unseen sources" below before relying on them.
 
 ### Calibration
 
 | Metric | Before (T=1.0) | After (T=3.51) |
 |--------|----------------|-----------------|
-| ECE | 0.0284 | 0.0115 |
-| NLL | 0.0685 | 0.0432 |
+| ECE | 0.0058 | 0.0020 |
+| NLL | 0.0643 | 0.0272 |
+
+### Generalization to unseen sources
+
+The training data is source-skewed: `no_robots` is 100% benign, `xtram1` and `gandalf` are 100% injection, and only `s_labs` and `deepset` contain both classes. Two diagnostics (`scripts/shortcut_baseline.py`, `scripts/eval_loso.py`):
+
+- Predicting from the source label alone, with no text, scores **77.3%** accuracy on the test set.
+- A TF-IDF + logistic regression baseline scores **96.9%** in-distribution, 1.8 points under the fine-tuned model.
+
+Leave-one-source-out (train on the other four sources, test on the held-out one; 4,000 training samples and 1 epoch per fold, uncalibrated, so a lower bound):
+
+| Held-out source | Classes | Qwen QLoRA | TF-IDF baseline |
+|---|---|---|---|
+| gandalf | injection | 98.5% | 94.1% |
+| s_labs | both | 88.1% (macro-F1 0.879, AUC 0.952) | 78.5% |
+| deepset | both | 81.5% (macro-F1 0.778, AUC 0.917) | 74.8% |
+| xtram1 | injection | 80.3% | 73.0% |
+| no_robots | benign | 56.9% | 60.5% |
+
+The model beats the bag-of-words baseline on unseen sources, so it learns more than source style. But accuracy on unseen sources is far below 98.7%, and with `no_robots` removed it labels 43% of ordinary benign instructions as injections. Expect that kind of drop on traffic unlike the training mix, and validate on your own data.
 
 ### Baseline Comparison (deberta-v3-base-injection, zero-shot)
 
