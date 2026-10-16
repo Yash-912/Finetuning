@@ -58,7 +58,7 @@ def load_hackaprompt(cfg: dict[str, Any]) -> pd.DataFrame:
             logger.warning("hackaprompt: no 'success' column, skipping filter")
         else:
             before = len(df)
-            df = df[df["success"] == True].copy()
+            df = df[df["success"].astype(bool)].copy()
             logger.info("hackaprompt: filtered to successful only: %d -> %d", before, len(df))
 
     if "prompt" in df.columns:

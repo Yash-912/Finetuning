@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 import torch
 from datasets import Dataset
+from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, roc_auc_score
 from transformers import (
     AutoModelForSequenceClassification,
@@ -26,7 +27,6 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
-from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.utils.config import load_config

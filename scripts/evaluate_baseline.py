@@ -23,7 +23,7 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 from torch.utils.data import DataLoader, Dataset
-from transformers import AutoConfig, AutoModelForSequenceClassification, AutoTokenizer
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -77,7 +77,6 @@ def main():
     print(f"Model parameters: {model.num_parameters():,}")
 
     label2id = model.config.label2id
-    id2label = model.config.id2label
     print(f"Label mapping: {label2id}")
 
     print(f"\nLoading test data: {TEST_PATH}")
@@ -113,12 +112,12 @@ def main():
     print(f"  Accuracy:      {acc:.4f}")
     print(f"  Macro F1:      {f1_macro:.4f}")
     print(f"  ROC-AUC:       {auc:.4f}")
-    print(f"\n  Per-class metrics:")
+    print("\n  Per-class metrics:")
     print(f"    Benign (0):   precision={precision[0]:.4f}  recall={recall[0]:.4f}  f1={f1[0]:.4f}")
     print(f"    Injection (1): precision={precision[1]:.4f}  recall={recall[1]:.4f}  f1={f1[1]:.4f}")
-    print(f"\n  Confusion matrix:")
-    print(f"                Predicted")
-    print(f"               Benign  Inj")
+    print("\n  Confusion matrix:")
+    print("                Predicted")
+    print("               Benign  Inj")
     print(f"  Actual Benign  {cm[0,0]:>5d}  {cm[0,1]:>3d}")
     print(f"         Inj     {cm[1,0]:>5d}  {cm[1,1]:>3d}")
 
@@ -142,7 +141,7 @@ def main():
         "per_source": {},
     }
 
-    print(f"\n  Per-source breakdown:")
+    print("\n  Per-source breakdown:")
     for src in sorted(df["source"].unique()):
         mask = df["source"] == src
         src_gt = gt[mask]

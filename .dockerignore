@@ -1,0 +1,13 @@
+venv/
+.venv/
+.git/
+.github/
+__pycache__/
+.pytest_cache/
+data/
+eval/
+learning/
+tests/
+models/**/checkpoint-*/
+*.db
+*.db-*

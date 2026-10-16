@@ -14,7 +14,6 @@ import logging
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -187,7 +186,7 @@ def main():
 
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 
-        for ax, conf, preds, title, ece_val in [
+        for ax, conf, preds, title, _ece_val in [
             (ax1, conf_before, preds_before, f"Before Calibration (T=1.0)\nECE={ece_before:.2%}", ece_before),
             (ax2, conf_after, preds_after, f"After Calibration (T={optimal_T:.2f})\nECE={ece_after:.2%}", ece_after),
         ]:

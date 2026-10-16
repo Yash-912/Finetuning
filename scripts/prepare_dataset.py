@@ -17,10 +17,10 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.utils.config import load_config
-from src.data.loader import LOADERS
-from src.data.deduplicator import deduplicate
 from src.data.balancer import check_balance, stratified_split
+from src.data.deduplicator import deduplicate
+from src.data.loader import LOADERS
+from src.utils.config import load_config
 
 logging.basicConfig(
     level=logging.INFO,

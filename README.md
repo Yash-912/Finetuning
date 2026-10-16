@@ -68,9 +68,11 @@ An end-to-end ML system that detects prompt injection attacks in LLM traffic. It
 | `middleware/classifier.py` | Singleton `InjectionClassifier` (4-bit base + LoRA adapter + temperature) |
 | `middleware/config.py` | Pydantic settings loaded from environment / `.env` |
 | `middleware/example_client.py` | One-line OpenAI SDK integration demo |
-| `middleware/test_middleware.py` | pytest integration tests (FastAPI `TestClient`) |
 | `scripts/review_queue.py` | SQLite-backed human labeling queue + interactive CLI |
 | `scripts/retrain.py` | Continuous retraining: merge labels → retrain → recalibrate → promote to shadow |
+| `tests/` | pytest suite (fake classifier + mock upstream; CPU-only) |
+| `docs/` | PRD and learning notes |
+| `Dockerfile` | GPU image for the detector proxy |
 | `eval/` | Generated metrics JSON, comparison, calibration curve, confusion matrices |
 | `data/processed/` | Train/val/test/adversarial parquet files + dataset card |
 
@@ -270,14 +272,23 @@ Hard-blocked requests raise a `403` API error carrying `"Prompt injection detect
 ### Tests
 
 ```bash
-pip install pytest httpx
-python -m pytest middleware/test_middleware.py -v
+pip install -r requirements-dev.txt
+python -m pytest              # no GPU or network needed
+ruff check .
 ```
 
-Covers health/metrics endpoints, required metric names, empty-message validation (400), benign passthrough, and hard-block behavior with confidence payload.
+The suite (`tests/`) uses a fake classifier and a mock upstream transport, so it runs on CPU in seconds and in CI (`.github/workflows/ci.yml`). It covers:
+hard-block / soft-flag behaviour and the inclusive threshold, upstream failure (502), not-ready (503), shadow-vs-production disagreement metrics, review-queue persistence and id uniqueness across restarts, retrain-adjacent data utilities (balancing, stratified split, dedup), and multimodal text extraction.
+
+### Docker
+
+```bash
+docker compose up -d                       # Prometheus + Grafana
+docker compose --profile serve up -d       # + the GPU detector proxy (needs NVIDIA Container Toolkit)
+```
 
 ## Notes
 
-- Model checkpoints and `.safetensors` binaries are gitignored; `models/qwen-injection-detector/best/` must be regenerated via the training pipeline (or restored separately) for the middleware to start.
+- Training checkpoints (`checkpoint-*`, optimizer states) are gitignored. The small final LoRA adapter in `models/qwen-injection-detector/best/` is kept in the repo so the service runs after a clone. `scripts/retrain.py` never overwrites it: new models land in `models/qwen-injection-detector/candidates/<timestamp>/` (and `shadow/` with `--shadow`) and are promoted manually; the test set is frozen across retrains.
 - `convert_safetensors_to_bin.py` is a one-off Windows workaround converting the cached HF safetensors snapshot to `.bin` to avoid page-file issues with memory-mapped loading.
 - The middleware loads the 4-bit quantized base model at startup and warms up with 3 dummy inferences before reporting ready; requests received earlier get a `503`.

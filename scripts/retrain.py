@@ -14,8 +14,8 @@ from sklearn.model_selection import train_test_split
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from scripts.review_queue import ReviewQueue
-from src.data.deduplicator import deduplicate
 from src.data.balancer import check_balance
+from src.data.deduplicator import deduplicate
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)-8s | %(message)s")
 logger = logging.getLogger("retrain")

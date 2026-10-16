@@ -59,12 +59,12 @@ class ReviewQueue:
         return cur.lastrowid
 
     def pull_unreviewed(self, limit: int = 20) -> list[dict]:
-        rows = self._conn.execute(
+        cur = self._conn.execute(
             "SELECT * FROM reviews WHERE reviewed = 0 ORDER BY request_id DESC LIMIT ?",
             (limit,),
-        ).fetchall()
-        columns = [d[0] for d in self._conn.execute("PRAGMA table_info(reviews)").fetchall()]
-        return [dict(zip(columns, row)) for row in rows]
+        )
+        columns = [d[0] for d in cur.description]
+        return [dict(zip(columns, row)) for row in cur.fetchall()]
 
     def label(self, request_id: int, human_label: int):
         now = datetime.now(timezone.utc).isoformat()

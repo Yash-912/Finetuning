@@ -1,6 +1,16 @@
 from scripts.review_queue import ReviewQueue
 
 
+def test_pull_unreviewed_returns_named_columns(tmp_path):
+    q = ReviewQueue(str(tmp_path / "q.db"))
+    rid = q.add("hello", 1, 0.9)
+    (row,) = q.pull_unreviewed()
+    assert row["request_id"] == rid and row["text"] == "hello" and row["production_pred"] == 1
+    q.label(rid, 0)
+    assert q.pull_unreviewed() == []
+    assert q.stats()["reviewed"] == 1
+
+
 def test_ids_do_not_collide_across_restarts(tmp_path):
     db = tmp_path / "q.db"
     q1 = ReviewQueue(str(db))

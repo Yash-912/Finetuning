@@ -85,7 +85,7 @@ def main():
     print(f"Adversarial eval set: {len(df)} examples")
     print(f"  Injection (1): {n_injection}")
     print(f"  Benign    (0): {n_benign}")
-    print(f"\n  Attack categories:")
+    print("\n  Attack categories:")
     for cat, count in df["attack_type"].value_counts().sort_index().items():
         print(f"    {cat}: {count}")
 

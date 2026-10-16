@@ -27,14 +27,14 @@ def analyze(df: pd.DataFrame, name: str):
     print(f"  Ratio (benign:inj): {ratio:.2f}:1")
 
     if "source" in df.columns:
-        print(f"\n  Per-source breakdown:")
+        print("\n  Per-source breakdown:")
         for src, count in df["source"].value_counts().items():
             inj = ((df["source"] == src) & (df["label"] == 1)).sum()
             ben = ((df["source"] == src) & (df["label"] == 0)).sum()
             print(f"    {src:<25s} {count:>6d} total  ({ben} benign, {inj} injection)")
 
     lengths = df["text"].astype(str).str.len()
-    print(f"\n  Text length (chars):")
+    print("\n  Text length (chars):")
     print(f"    min:    {lengths.min()}")
     print(f"    max:    {lengths.max()}")
     print(f"    mean:   {lengths.mean():.1f}")

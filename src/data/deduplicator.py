@@ -5,7 +5,6 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 logger = logging.getLogger(__name__)
@@ -45,6 +44,8 @@ def near_deduplicate(
         return df
 
     logger.info("Loading embedding model: %s", model_name)
+    from sentence_transformers import SentenceTransformer  # heavy import; only needed for near-dedup
+
     model = SentenceTransformer(model_name)
     logger.info("Computing embeddings for %d texts...", before)
 

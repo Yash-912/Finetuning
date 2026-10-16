@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 import httpx
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import JSONResponse
-from prometheus_client import Counter, Histogram, generate_latest, CollectorRegistry
+from prometheus_client import CollectorRegistry, Counter, Histogram, generate_latest
 
 from middleware.classifier import InjectionClassifier
 from middleware.config import settings

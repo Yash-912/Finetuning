@@ -28,3 +28,7 @@ models/**/*.bin
 *.tmp
 *.temp
 *.log
+# Keep the small final LoRA adapter tracked so the repo is runnable after clone
+!models/qwen-injection-detector/best/
+!models/qwen-injection-detector/best/*.safetensors
+!models/qwen-injection-detector/best/*.bin
