@@ -1,0 +1,500 @@
+{"text": "Why does this loop skip the last element? \nfor i in range(len(items) - 1):\n    print(items[i])"}
+{"text": "Can you write a Python function that flattens a nested list of arbitrary depth?"}
+{"text": "My pandas groupby returns NaN for the mean column. The code is df.groupby(\"region\")[\"sales\"].mean() and the sales column has strings like \"1,200\". What is going wrong?"}
+{"text": "Explain what a Python generator is and give a tiny example that yields the first n squares."}
+{"text": "I get \"TypeError: unsupported operand type(s) for +: 'int' and 'str'\" when running total = total + row[\"qty\"]. How do I fix it?"}
+{"text": "What is the difference between a list comprehension and a generator expression in Python?"}
+{"text": "Please review this function for bugs: \ndef add_item(item, bucket=[]):\n    bucket.append(item)\n    return bucket"}
+{"text": "How do I use dataclasses with a default factory for a list field?"}
+{"text": "Write a decorator that retries a function up to three times on ValueError, with exponential backoff."}
+{"text": "Why does my Flask route return 405 Method Not Allowed when I send a POST? \n@app.route(\"/submit\")\ndef submit(): return \"ok\""}
+{"text": "What does the asterisk do in def f(*args, **kwargs) and when should I use it?"}
+{"text": "My asyncio script hangs forever. The coroutine awaits asyncio.Queue.get() but nothing ever puts. How should I restructure it?"}
+{"text": "How can I read a CSV file with a header and convert each row into a dict using only the standard library?"}
+{"text": "Explain the GIL in CPython in two short paragraphs and mention when multiprocessing helps."}
+{"text": "What is the cleanest way to merge two dictionaries in Python 3.9 and later?"}
+{"text": "Write a context manager class that times a block of code and prints the elapsed seconds."}
+{"text": "Can you show how to use itertools.groupby on a list of tuples sorted by their first element?"}
+{"text": "My unit test passes locally but fails in CI with FileNotFoundError for a relative path. What usually causes this?"}
+{"text": "Why is my while loop never ending? \ncount = 0\nwhile count < 10:\n    if count % 2 == 0:\n        count += 1"}
+{"text": "What is the best way to parse ISO 8601 timestamps with timezone offsets in Python?"}
+{"text": "Show me how to write a binary search function that returns the insertion index."}
+{"text": "How do I type-hint a function that accepts either a string or a list of strings?"}
+{"text": "Why does sorted() order mixed-case strings differently than I expect, and how do I sort case-insensitively?"}
+{"text": "Explain what __slots__ does on a Python class and when it is worth using."}
+{"text": "What does this traceback mean? KeyError: 'user_id' raised inside json_handler.py line 42."}
+{"text": "Please write a function that validates an email address with a simple regex and explain its limitations."}
+{"text": "How do I make a Python script that accepts --verbose and --output flags using argparse?"}
+{"text": "My numpy boolean mask returns the right shape but I wanted the filtered values. How do I index correctly?"}
+{"text": "Can you help me write a rate limiter class using a token bucket in pure Python?"}
+{"text": "What is wrong with using a mutable default argument in a class constructor, and how do I avoid it?"}
+{"text": "How can I run a shell command from Python and capture both stdout and stderr?"}
+{"text": "Write a function that computes the Levenshtein distance between two strings without external libraries."}
+{"text": "Why does is return False for two equal strings built at runtime while == returns True?"}
+{"text": "How do I use pytest fixtures with module scope to share a database connection across tests?"}
+{"text": "What is a good way to split a long list into batches of 100 in Python?"}
+{"text": "Explain the difference between @staticmethod and @classmethod with a short example."}
+{"text": "My pandas code shows SettingWithCopyWarning after filtering. What does it mean and how do I silence it properly?"}
+{"text": "Write a Python script that watches a directory and prints a message whenever a new file appears."}
+{"text": "How do I serialize a Python object containing datetime fields to JSON?"}
+{"text": "I keep getting \"IndentationError: unexpected indent\" in this snippet: \ndef greet(name):\nprint(\"hi \" + name)"}
+{"text": "Can you explain how Python's with statement guarantees cleanup when an exception occurs?"}
+{"text": "Show me an efficient way to count word frequencies in a large text file using collections.Counter."}
+{"text": "What is the difference between copy.deepcopy and copy.copy, and when does each matter?"}
+{"text": "How do I raise a custom exception with extra context and keep the original traceback?"}
+{"text": "My class attribute is shared across instances. Here is the code: \nclass Team:\n    members = []\n    def add(self, m):\n        self.members.append(m)"}
+{"text": "How do I write type hints for a callback that takes an int and returns a string?"}
+{"text": "Is a list or a set faster for membership checks in Python, and by how much for a large collection?"}
+{"text": "Please help me convert this loop into a dictionary comprehension: \nresult = {}\nfor k, v in pairs:\n    if v > 0:\n        result[k] = v * 2"}
+{"text": "How do I set up logging with different levels and send errors to a separate file?"}
+{"text": "What does yield from do, and is it different from looping and yielding each item?"}
+{"text": "Here is a function meant to return the median of a list but it is wrong for even lengths: \ndef median(xs):\n    xs.sort()\n    mid = len(xs) // 2\n    return xs[mid]\nHow should I fix it without mutating the input?"}
+{"text": "Can you help me build a small CLI tool that counts lines, words, and characters in files passed as arguments, similar to wc?"}
+{"text": "My script crashes with \"JSONDecodeError: Expecting value: line 1 column 1\" after open(\"config.json\") and json.load(f). What could be in the file?"}
+{"text": "Explain how functools.lru_cache works on a recursive Fibonacci function and what cache_info reports."}
+{"text": "I wrote this retry loop and it never breaks out: \nattempts = 0\nwhile True:\n    try:\n        fetch()\n    except Exception:\n        attempts += 1\n        if attempts > 3:\n            break\nWhat is wrong with the logic?"}
+{"text": "How do I use enumerate with a start index of 1 when printing a numbered list?"}
+{"text": "Write a function that takes a sentence and returns the longest word, returning the first one on ties."}
+{"text": "My f-string prints the literal text {name} instead of the value. The line is print('Hello {name}'). What is the fix?"}
+{"text": "Explain how zip handles lists of unequal length and when to use itertools.zip_longest."}
+{"text": "Here is my recursive string reverser: \ndef rev(s):\n    if s == \"\":\n        return \"\"\n    return rev(s[1:])\nIt hits a RecursionError. Why?"}
+{"text": "How do I use unittest.mock.patch to replace datetime.now inside a module during a test?"}
+{"text": "Write a Python script that reads a text file and prints the ten most common words, ignoring case and punctuation."}
+{"text": "Can you explain the difference between is None and == None in Python, and which one PEP 8 recommends?"}
+{"text": "How can I merge several CSV files that share the same header into one file with the csv module?"}
+{"text": "Show me how to use TypedDict from the typing module for a dictionary with fixed keys."}
+{"text": "My script calls os.system with user input and I am worried about injection. What should I use instead?"}
+{"text": "Explain how to use Pydantic v2 to validate a nested JSON payload with optional fields."}
+{"text": "Write a function that checks whether a string has balanced parentheses, brackets, and braces."}
+{"text": "What does the -> annotation in a Python function signature mean, and does Python enforce it at runtime?"}
+{"text": "How do I profile a slow Python function with cProfile and sort the output by cumulative time?"}
+{"text": "Here is a simple class with a bug: \nclass Account:\n    def __init__(self, balance):\n        self.balance = balance\n    def withdraw(self, amount):\n        if amount > self.balance:\n            return False\n        self.balance =- amount\nWhat is wrong on the last line?"}
+{"text": "Write a generator that yields Fibonacci numbers forever and show how to take the first ten with itertools.islice."}
+{"text": "What is the purpose of if __name__ == \"__main__\" and what happens if I leave it out?"}
+{"text": "How do I iterate over a dictionary in reverse insertion order in Python 3.8 and later?"}
+{"text": "My SQLAlchemy session throws DetachedInstanceError when I access a relationship after the request ends. What is going on?"}
+{"text": "Explain why the tuple swap a, b = b, a works without a temporary variable."}
+{"text": "How do I use asyncio.gather to run several HTTP requests with aiohttp and collect the results?"}
+{"text": "What does the warning \"DeprecationWarning: datetime.datetime.utcnow() is deprecated\" mean and what should replace it?"}
+{"text": "Write a Python function that removes duplicate dicts from a list by a key while keeping the first occurrence."}
+{"text": "My Jupyter kernel dies when I load a 4 GB parquet file. What memory-friendly options do I have?"}
+{"text": "Explain how Python decides between a method defined on a class and an instance attribute that has the same name."}
+{"text": "Here is my interval merging code: \ndef merge(iv):\n    iv.sort()\n    out = [iv[0]]\n    for s, e in iv[1:]:\n        if s <= out[-1][1]:\n            out[-1][1] = max(out[-1][1], e)\n        else:\n            out.append([s, e])\n    return out\nDoes it handle an empty input list, and is there a cleaner version?"}
+{"text": "Here is my React list: \nfunction Items({ items }) {\n  return <ul>{items.map(i => <li>{i.name}</li>)}</ul>;\n}\nIt warns about missing keys. What should I add?"}
+{"text": "How do I write a custom hook called useLocalStorage that keeps a state value in sync with localStorage?"}
+{"text": "Explain the difference between localStorage and sessionStorage, and when cookies are a better choice."}
+{"text": "My Node CLI throws ERR_MODULE_NOT_FOUND after I switched to ES modules. What should I check in package.json?"}
+{"text": "Write a function that takes an array of numbers and returns the running average at each index."}
+{"text": "How do I add 30 days to today's date in JavaScript and format the result as YYYY-MM-DD?"}
+{"text": "What does Array.prototype.sort do by default with numbers, and how do I sort them numerically?"}
+{"text": "Here is my Redux reducer: \nfunction counter(state = 0, action) {\n  switch (action.type) {\n    case \"inc\": state++;\n    default: return state;\n  }\n}\nWhy does the UI never update?"}
+{"text": "Write a small Express route that accepts a JSON body, checks that name is a non-empty string, and returns 400 otherwise."}
+{"text": "How does the browser same-origin policy relate to the CORS error I get when calling my API from a page?"}
+{"text": "Explain how Promise.race differs from Promise.all by using a timeout example."}
+{"text": "My Svelte store is not updating my component. What are common mistakes with the $ prefix?"}
+{"text": "How do I write a memoized selector in JavaScript without a library?"}
+{"text": "Why does my for loop with var inside an async callback print the same index every time?"}
+{"text": "What is the difference between event.preventDefault and event.stopPropagation in the DOM?"}
+{"text": "Write a function that deep compares two JSON-compatible objects for equality without using a library."}
+{"text": "How do I parse a query string like ?page=2&sort=name into an object in the browser?"}
+{"text": "My TypeScript generic function returns any and I want it to infer the return type from the input. How do I write it?"}
+{"text": "Here is a Node script that reads a folder: \nconst fs = require(\"fs\");\nconst files = fs.readdirSync(\"./data\");\nfiles.forEach(async f => { await fs.promises.readFile(f); });\nWhat is the bug here?"}
+{"text": "How do I use the storage event to sync state between two browser tabs?"}
+{"text": "Can you show how to set up a basic Vitest config for a TypeScript project?"}
+{"text": "Explain how useRef differs from useState in React and when I should reach for a ref."}
+{"text": "Write a function in JavaScript that formats a byte count as a human readable value like 1.5 MB."}
+{"text": "My CSS-in-JS styles get overridden unexpectedly. How does specificity work with nested selectors?"}
+{"text": "How do I implement infinite scroll with IntersectionObserver in vanilla JavaScript?"}
+{"text": "Write a function that converts a flat list of parent-child pairs into a nested tree object."}
+{"text": "What is the second argument to Array.prototype.map and how do I use it?"}
+{"text": "How can I iterate over a ReadableStream from fetch using async iteration?"}
+{"text": "My jQuery plugin broke after upgrading to jQuery 3. What API changes usually cause this?"}
+{"text": "Here is a Go function that always returns zero: \nfunc sum(xs []int) int {\n  total := 0\n  for _, x := range xs {\n    total + x\n  }\n  return total\n}\nWhat did I miss?"}
+{"text": "How do I write a Go program that reads a JSON config file into a struct with nested fields?"}
+{"text": "What does the context package do, and how do I pass a request-scoped value safely?"}
+{"text": "Write a Go function that returns the first n lines of a file using os.Open and bufio.Reader."}
+{"text": "Why does my Go struct field stay empty after json.Unmarshal when the field name is lowercase?"}
+{"text": "How do I write a benchmark for a sorting function using the testing package in Go?"}
+{"text": "Explain how goroutine leaks happen with unbuffered channels and how to prevent them."}
+{"text": "Write a Go middleware that logs the method, path, and duration of each request."}
+{"text": "How did range loop variable capture behave inside goroutines before Go 1.22, and what changed after?"}
+{"text": "What is the blank identifier underscore used for in Go imports?"}
+{"text": "How do I embed a static file into a Go binary using go:embed?"}
+{"text": "My Go program prints a pointer address instead of the struct contents. How do I print the fields?"}
+{"text": "Write a Go function that checks whether a string is a palindrome, ignoring case and spaces."}
+{"text": "How do I run Go tests in parallel with t.Parallel and avoid data races?"}
+{"text": "Explain how Go modules use go.mod and go.sum to pin dependency versions."}
+{"text": "Here is my Rust code: \nfn main() {\n    let v = vec![1, 2, 3];\n    let first = v[0];\n    drop(v);\n    println!(\"{}\", first);\n}\nDoes this compile, and why or why not?"}
+{"text": "How do I return an iterator from a function in Rust using impl Iterator?"}
+{"text": "Why can't Rust strings be indexed by integer, and how do I get the nth character?"}
+{"text": "Write a simple Rust CLI that takes a file path from args and prints the number of lines using std::env and std::fs."}
+{"text": "What does #[derive(Debug, PartialEq)] generate, and when is it not enough?"}
+{"text": "How do I use serde to deserialize a JSON array of objects in Rust?"}
+{"text": "Why does Rust's match need to be exhaustive, and how do I write a catch-all arm?"}
+{"text": "My Rust async function returns a future that never seems to run. What am I missing?"}
+{"text": "How do I use std::sync::mpsc channels to send results from several threads back to main?"}
+{"text": "Write a Rust function that parses a comma-separated line of integers and returns a Result with a custom error type."}
+{"text": "Explain Pin in Rust at a high level and why async code needs it."}
+{"text": "What is the difference between iter, iter_mut, and into_iter on a Vec?"}
+{"text": "How do I write a trait with a default method implementation in Rust?"}
+{"text": "My Cargo dependencies conflict with another crate. How do I see the resolved dependency tree?"}
+{"text": "Why does Rust reject a mutable and an immutable reference to the same variable at the same time?"}
+{"text": "Here is a DAO method that leaks connections: \npublic List<User> all() throws SQLException {\n  Connection c = ds.getConnection();\n  ResultSet rs = c.createStatement().executeQuery(\"select * from users\");\n  return map(rs);\n}\nHow should I rewrite it?"}
+{"text": "How do I sort a List of objects by two fields using Comparator.comparing and thenComparing?"}
+{"text": "Explain the difference between an abstract class and an interface in Java 17 with an example."}
+{"text": "Write a Java method that reverses the words in a sentence using split and StringBuilder."}
+{"text": "Why does my HashMap lose entries when the keys are mutable and their hashCode changes?"}
+{"text": "How do I use Spring's @Value annotation to inject a property with a default value?"}
+{"text": "What is the difference between Thread.sleep and Object.wait in Java?"}
+{"text": "Write a simple Spring Boot REST controller that returns a list of items as JSON."}
+{"text": "My enum switch gives a missing case error. How do I write an exhaustive switch expression?"}
+{"text": "How do I read environment variables safely in Java and fail fast if one is missing?"}
+{"text": "What does Collectors.groupingBy return, and how do I count items per group in a stream?"}
+{"text": "Explain why this prints 0.30000000000000004 and how to use BigDecimal for money amounts."}
+{"text": "Write a recursive Java method that computes the power set of a list of integers."}
+{"text": "Why do I get \"incompatible types: possible lossy conversion from double to int\" and how do I fix it?"}
+{"text": "How do I write an integration test for a Spring Boot repository using @DataJpaTest?"}
+{"text": "Here is a class with a dangling reference: \nconst std::string& get() { std::string s = \"hi\"; return s; }\nWhy is this a problem, and how do I fix it?"}
+{"text": "How do I write a template that works with any container that has size() and begin()?"}
+{"text": "What is the difference between std::vector reserve and resize, and when does each matter?"}
+{"text": "Explain how smart pointers prevent memory leaks and show a make_unique example."}
+{"text": "My CMake build can't find Boost after I installed it with vcpkg. What should I set?"}
+{"text": "Write a C++ function that splits a string by a delimiter and returns std::vector<std::string>."}
+{"text": "Why do I need a virtual destructor in a base class that has virtual functions?"}
+{"text": "How do I read an entire file into a std::string in C++17 efficiently?"}
+{"text": "What does constexpr mean for a function, and how does it differ from const?"}
+{"text": "How do I use std::chrono to measure the elapsed time of a loop in milliseconds?"}
+{"text": "Here is a bug: \nint* arr = new int[10];\ndelete arr;\nWhat is the problem with this code?"}
+{"text": "How do I implement operator<< for a custom class so I can print it with std::cout?"}
+{"text": "Explain the difference between std::unique_lock and std::lock_guard."}
+{"text": "Write a simple thread pool in C++ using std::thread and a condition variable."}
+{"text": "What does -Wall -Wextra catch in C++ that the default compile does not?"}
+{"text": "Here is a query I wrote: \nSELECT dept, AVG(salary)\nFROM employees\nWHERE AVG(salary) > 50000\nGROUP BY dept;\nWhy does it fail, and how do I fix it?"}
+{"text": "How do I write a query that lists the second highest salary in each department?"}
+{"text": "Explain how to use COALESCE to replace NULL values in a report column."}
+{"text": "Write a SQL view that combines active users with their most recent login date."}
+{"text": "How can I find gaps in a sequence of invoice numbers in PostgreSQL?"}
+{"text": "How do I delete duplicate rows but keep the one with the smallest id in MySQL?"}
+{"text": "Show a migration that adds a NOT NULL column with a default to a large table with minimal locking."}
+{"text": "My query with LIKE '%term%' is very slow on a big table. What are my options?"}
+{"text": "Explain the difference between an INNER JOIN and a LEFT JOIN with a filter placed in the WHERE clause."}
+{"text": "How do I parameterize a SQL query in Python so I avoid SQL injection?"}
+{"text": "What does EXISTS do, and why is it often faster than IN for subqueries?"}
+{"text": "Write a MySQL stored procedure that inserts an audit log row on each update."}
+{"text": "How can I convert a Unix timestamp column to a readable date in SQL Server?"}
+{"text": "How do I match a password that has at least one uppercase letter, one digit, and is at least eight characters long?"}
+{"text": "Write a regex that matches an ISO date and rejects impossible months like 13."}
+{"text": "Why does my JavaScript regex with the g flag give different results when I call test() twice?"}
+{"text": "How can I use grep -E to find lines that contain a phone number like 555-123-4567?"}
+{"text": "Explain lookahead in regex with an example that matches a number followed by the unit kg."}
+{"text": "What regex would split a camelCase identifier like parseHTTPResponse into words?"}
+{"text": "Write a bash script that loops over its arguments and prints each one with its position number."}
+{"text": "How do I use find with -mtime to delete files older than seven days in a backup folder?"}
+{"text": "My Makefile says \"missing separator\". What usually causes that error?"}
+{"text": "How do I redirect only stderr to a file in bash while keeping stdout on the screen?"}
+{"text": "What does the -p flag do in mkdir, and why is it useful in scripts?"}
+{"text": "How do I check the exit status of the previous command in bash and branch on it?"}
+{"text": "Show me how to use getopts in a bash script to parse -v and -f file flags."}
+{"text": "Explain the difference between $@ and $* in bash when the arguments contain spaces."}
+{"text": "How can I list only the directories in the current folder with ls or find?"}
+{"text": "What is the quickest way to search every file in a repo for a string while excluding node_modules?"}
+{"text": "Write a PowerShell one-liner that lists the ten largest files in a folder."}
+{"text": "How do I set an environment variable for a single command only in bash?"}
+{"text": "What does tail -f do, and how can I follow two log files at once?"}
+{"text": "How do I compress a folder into a tar.gz archive while excluding a cache directory?"}
+{"text": "My Docker build cache is huge. Which commands clean up unused images and volumes?"}
+{"text": "How do I rename a local branch and update its upstream on the remote?"}
+{"text": "I committed to main by mistake. How do I move that commit to a new branch and reset main?"}
+{"text": "How do I see the author and date of each line in a file using git blame?"}
+{"text": "What does git fetch --prune do, and why would I run it?"}
+{"text": "How do I resolve a merge conflict in a JSON file where both sides added different keys?"}
+{"text": "What is the difference between git pull and running git fetch followed by git merge?"}
+{"text": "How can I list all files that changed between two tags?"}
+{"text": "How do I make git ignore file mode changes for a repo I cloned on Windows?"}
+{"text": "Explain git worktree and when it helps if I need two branches checked out at once."}
+{"text": "How do I write a pre-push hook that runs unit tests before allowing the push?"}
+{"text": "Write a JUnit 5 test that verifies a method returns an empty list for null input."}
+{"text": "How do I use Playwright to wait for an element to appear before asserting its text?"}
+{"text": "What makes a good test name, and can you give examples for a payment processing function?"}
+{"text": "How do I write a property-based test with Hypothesis for a sorting function in Python?"}
+{"text": "Show a pytest conftest.py fixture that creates a temporary directory for each test."}
+{"text": "My test suite is slow because each test creates a new database. How can I speed it up?"}
+{"text": "How do I assert that a pytest test raises a ValueError with a specific message?"}
+{"text": "Write a React Testing Library test that types into a search box and checks the filtered results."}
+{"text": "What is mutation testing, and how do I run it on a JavaScript project with Stryker?"}
+{"text": "How do I stub out environment variables in a Jest test?"}
+{"text": "Here's a Python function with nested loops. Can you suggest a simpler approach? \ndef pairs(xs, t):\n    out = []\n    for i in range(len(xs)):\n        for j in range(len(xs)):\n            if i != j and xs[i] + xs[j] == t:\n                out.append((xs[i], xs[j]))\n    return out"}
+{"text": "What should I look for in a code review of a database migration that drops a column?"}
+{"text": "Review my TypeScript type for a User object and tell me whether any fields should be optional or readonly."}
+{"text": "Can you comment on this Java method that catches Exception and returns null? \ntry { return parse(s); } catch (Exception e) { return null; }"}
+{"text": "What are the common review points for a pull request that adds a caching layer?"}
+{"text": "Please look at my Dockerfile and suggest changes that would produce a smaller image."}
+{"text": "Is it acceptable to use a global mutable config object in a Go service? What would you flag in review?"}
+{"text": "How do I use the requests Session object to keep cookies across multiple calls?"}
+{"text": "How do I send a file download with the correct Content-Disposition header from a Flask route?"}
+{"text": "Show me how to use boto3 to list S3 objects under a prefix and handle pagination."}
+{"text": "What does HTTP 429 mean, and how should a client respect the Retry-After header?"}
+{"text": "How do I respond to a Discord slash command using discord.js?"}
+{"text": "How can I set a request timeout and retries using urllib3 with requests?"}
+{"text": "Explain how the parts of a JWT are structured, since it has three dot-separated segments."}
+{"text": "Write a fetch wrapper in TypeScript that throws on non-2xx responses and parses the JSON body."}
+{"text": "How do I call a gRPC service from Python using generated stubs?"}
+{"text": "Explain the difference between a min heap and a max heap, and show how to get max-heap behavior from heapq in Python."}
+{"text": "Write a function to check whether a binary tree is a valid binary search tree."}
+{"text": "What is a Bloom filter, and when would I use it instead of a set?"}
+{"text": "Implement merge sort in Python and explain why it is stable."}
+{"text": "How do I find the longest substring without repeating characters using a sliding window?"}
+{"text": "What is the difference between depth first search and breadth first search in terms of memory use?"}
+{"text": "Explain how a skip list gives logarithmic search time."}
+{"text": "Write a function that finds all anagrams of a pattern inside a string using a frequency map."}
+{"text": "How do I check whether a graph is bipartite using BFS coloring?"}
+{"text": "Explain topological sort and implement Kahn's algorithm for a directed acyclic graph."}
+{"text": "What does TypeError: 'NoneType' object is not subscriptable mean in Python, and where should I look?"}
+{"text": "fatal: not a git repository appears when I run git status in my project folder. What happened?"}
+{"text": "Explain the Next.js error \"Hydration failed because the initial UI does not match what was rendered on the server.\""}
+{"text": "What does ReferenceError: require is not defined mean in a browser script?"}
+{"text": "Cannot find module './config' appears only in production. What could cause that?"}
+{"text": "What is the meaning of IndexError: list assignment index out of range in Python?"}
+{"text": "The linker says undefined reference to pthread_create when I build. How do I fix it?"}
+{"text": "What does CrashLoopBackOff mean in Kubernetes, and what are the first steps to debug it?"}
+{"text": "Access is denied when a Windows build script runs. What are the usual causes?"}
+{"text": "What does panic: runtime error: invalid memory address or nil pointer dereference mean in Go?"}
+{"text": "Explain how a Python dictionary handles hash collisions internally in simple terms."}
+{"text": "Write a JavaScript function that returns the intersection of two arrays without duplicates."}
+{"text": "My Java program prints the wrong result for a leap year check. Here is the method: \nboolean leap(int y) { return y % 4 == 0 || y % 100 == 0 && y % 400 == 0; }\nIs the logic right?"}
+{"text": "How do I wrap a long-running Python function so that it logs its start and end times automatically?"}
+{"text": "What are the tradeoffs between using a Makefile and a justfile for a small project?"}
+{"text": "Write a SQL query that returns the number of orders per month for the last year, including months with zero orders."}
+{"text": "How do I handle a race condition when two requests try to update the same database row?"}
+{"text": "Explain how HTTP keep-alive works and why it speeds up repeated requests to one server."}
+{"text": "Can you write a bash one-liner that sums the sizes of all files with a given extension?"}
+{"text": "Explain why my React useState setter does not update the value immediately after I call it."}
+{"text": "Write a Python function that returns the nth row of Pascal's triangle without building all previous rows."}
+{"text": "How do I write a simple command-line calculator in JavaScript that reads from stdin?"}
+{"text": "Why does my C program print random numbers every run even after I call srand with a fixed seed?"}
+{"text": "What does the 'use strict' directive change in JavaScript, and should I use it in modules?"}
+{"text": "Write a Go struct with a custom MarshalJSON method that formats a time as Unix seconds."}
+{"text": "How do I cache expensive API responses in memory in a Flask app with a time-to-live?"}
+{"text": "What is the time complexity of Python's list.insert at index zero, and what should I use instead?"}
+{"text": "My Kotlin data class copy() does not deep copy a nested list. Why, and how do I fix it?"}
+{"text": "Explain how garbage collection in Java differs from reference counting in Python."}
+{"text": "Write a Rust function that returns the top three largest values from a slice without sorting the whole thing."}
+{"text": "Why does my C# async method deadlock when I call .Result from a WinForms button handler?"}
+{"text": "How do I make a bash script print a usage message when called with no arguments?"}
+{"text": "Explain what a closure captures in Python when a lambda is created inside a loop."}
+{"text": "Write a JavaScript generator that yields pages from a paginated API until there are no more results."}
+{"text": "How can I use Git hooks to automatically run a formatter before each commit?"}
+{"text": "Write a Python function that computes the GCD of two integers and then the LCM from it."}
+{"text": "My Node.js server leaks memory over time. What are the first things I should check with heap snapshots?"}
+{"text": "Explain the difference between a process and a thread in terms of memory and communication."}
+{"text": "How do I write a SQL query that finds the median salary per department in PostgreSQL?"}
+{"text": "Write a small TypeScript function that narrows an unknown value to a string or number using type guards."}
+{"text": "Why does Python print 1e-05 instead of 0.00001 and how do I control float formatting?"}
+{"text": "How do I write a Makefile target that runs tests only when source files have changed?"}
+{"text": "Explain the role of a reverse proxy like nginx in front of a Node app, in plain terms."}
+{"text": "Write a Java method that checks whether two strings are anagrams, ignoring case."}
+{"text": "What does the error \"Segmentation fault\" in a Python C extension usually point to?"}
+{"text": "How do I write a JavaScript function that converts a Roman numeral string into an integer?"}
+{"text": "Can you explain why my Postgres query uses a sequential scan even though I added an index on the column?"}
+{"text": "Write a short Go program that reads a list of numbers from stdin and prints their average."}
+{"text": "Explain how to use the Node.js readline module to build an interactive prompt that asks for a name."}
+{"text": "How do I set up a Python virtual environment and pin dependencies with a requirements.txt file?"}
+{"text": "Write a regex that matches a US phone number in the format (555) 123-4567 or 555-123-4567."}
+{"text": "Why does my CSS flex container shrink its children more than I expect? The markup has three div children with long text."}
+{"text": "Write a function in Python that returns the first non-repeating character in a string, or None if there is none."}
+{"text": "My Spring Boot app takes too long to start in development. What settings can speed it up?"}
+{"text": "How can I run only one test method from a Java test class using Maven?"}
+{"text": "Explain what a race condition is using a short Go example with two goroutines incrementing one counter."}
+{"text": "Write a bash function that prints the largest number among its arguments."}
+{"text": "Write a TypeScript interface for a paginated API response with items, total, and an optional next cursor."}
+{"text": "How do I use Python's secrets module to generate a random token for password reset links?"}
+{"text": "Explain why a Dockerfile COPY before RUN npm install makes my builds slow, and how to reorder layers."}
+{"text": "What happens when I call await on a non-promise value in JavaScript?"}
+{"text": "My Rust program compiles but the output file is empty. The write uses File::create and write! without flush. What am I missing?"}
+{"text": "How do I write a Jest snapshot test for a component that renders a list of cards?"}
+{"text": "Why does the sum of 0.1 and 0.2 in Python not equal 0.3, and how do I compare floats safely?"}
+{"text": "What is the proper way to close a database connection pool when a Node.js app shuts down?"}
+{"text": "Write a C function that copies a string safely into a fixed-size buffer and always null terminates it."}
+{"text": "How do I use the Python subprocess module to pipe the output of one command into another?"}
+{"text": "Explain the difference between an index scan and an index-only scan in PostgreSQL."}
+{"text": "Write a Java record that validates its fields in a compact constructor and throws on negative values."}
+{"text": "How do I handle a 500 error from a third-party API without crashing my Python worker?"}
+{"text": "My Dockerized Python app cannot write to a mounted volume. What permissions should I check?"}
+{"text": "Write an awk one-liner that prints the sum of the third column in a CSV file."}
+{"text": "What does a 304 Not Modified response mean, and how do ETags make it work?"}
+{"text": "How do I write a React custom hook that debounces a value and returns the debounced version?"}
+{"text": "Explain what a pure function is and give an example of refactoring an impure function into a pure one."}
+{"text": "Write a Go test that uses httptest.NewServer to check that a handler returns status 200."}
+{"text": "How can I implement a basic publish and subscribe system in Python using threading and queues?"}
+{"text": "My Kubernetes deployment has pods stuck in Pending. What does kubectl describe usually reveal?"}
+{"text": "Why does my C++ program run faster in release mode than debug mode, and what flags control that?"}
+{"text": "How do I write an Express error-handling middleware that returns JSON with the right status code?"}
+{"text": "Explain the purpose of a database index, and when adding one slows down writes."}
+{"text": "How do I parse a multi-line log file in Python where each entry starts with a timestamp?"}
+{"text": "What's the difference between a symbolic link and a hard link on Linux, and when does each fail?"}
+{"text": "Can you show a simple way to add retries with jitter when a Go HTTP client gets a 503?"}
+{"text": "Why does my Python multiprocessing script print nothing on Windows when I do not guard it with __main__?"}
+{"text": "How do I write a Bash script that reads a CSV line by line and skips the header row?"}
+{"text": "What does it mean that a Java interface method is default, and when should I use one?"}
+{"text": "How do I calculate the number of business days between two dates in Python, skipping weekends?"}
+{"text": "Explain why my Node.js callback never runs when I forget to call done in a Mocha test."}
+{"text": "Write a Rust program that counts how many times each word appears in a string using HashMap."}
+{"text": "How do I migrate a Flask app from the old app.run setup to a production WSGI server like gunicorn?"}
+{"text": "What's a good way to organize a large React codebase with feature folders instead of type folders?"}
+{"text": "Write a SQL statement that creates a table with a foreign key and an ON DELETE CASCADE rule."}
+{"text": "My Python code prints an unexpected list when I return from a function inside a for loop. Here is the code: \ndef find(xs):\n    for x in xs:\n        if x > 3:\n            return [x]\n        return []"}
+{"text": "How do I debug a Node.js app with the built-in inspector and set a breakpoint in VS Code?"}
+{"text": "Write a bash one-liner that deletes empty directories under the current folder."}
+{"text": "Explain how to handle a timeout in a Go database query using context and why it matters."}
+{"text": "Write a Python script that downloads a list of URLs concurrently with a thread pool and reports failures."}
+{"text": "What does the error \"cannot assign to literal\" mean in Python and where might it come from?"}
+{"text": "Write a Ruby method that returns the second element of an array or nil if the array is short."}
+{"text": "How can I test a function that writes to the filesystem in Go without touching real files?"}
+{"text": "What does the Chrome DevTools error \"Uncaught (in promise)\" mean and how do I trace its source?"}
+{"text": "Write a Python function that converts a list of tuples into a nested dictionary keyed by the first two values."}
+{"text": "How do I set up pre-commit hooks in a Python repo to run black and flake8 automatically?"}
+{"text": "Explain the reason Java's String.format with %d fails when given a double value."}
+{"text": "Write a SQL query to find employees who earn more than their managers."}
+{"text": "How do I add a custom header to every outgoing request in Python's requests library using a session?"}
+{"text": "Why does a JavaScript arrow function not have its own this, and how does that matter in a class method?"}
+{"text": "What steps should I take to debug a memory leak in a C++ server that uses new and delete?"}
+{"text": "Write a small Python function that takes a list of words and returns the words grouped by their length."}
+{"text": "Explain how DNS caching can make my deployment look like it is still serving the old version."}
+{"text": "My .NET app returns a 404 for a route that works in dev. What routing issues are common?"}
+{"text": "Can you give me a Python snippet that reads a binary file and prints the first 16 bytes as hex?"}
+{"text": "Write a Java method that returns the frequency of each character in a string as a Map."}
+{"text": "What's the best way to store passwords in a Node.js app, and how do I hash them with bcrypt?"}
+{"text": "Explain what a foreign key constraint enforces and what happens when the referenced row is missing."}
+{"text": "Write a Python decorator that caches results of a function per argument tuple with a max size of 100."}
+{"text": "How do I use the fs.watch API in Node to reload a config file when it changes?"}
+{"text": "Write a Kotlin function that returns the first duplicate element in a list or null if there is none."}
+{"text": "My CI pipeline passes locally but fails on the server with a locale error about UTF-8. What should I check?"}
+{"text": "How can I write a Python function to validate that a list of integers is strictly increasing?"}
+{"text": "Explain why the rule \"prefer composition over inheritance\" matters, with a short Python example."}
+{"text": "Write a shell command that counts how many lines in all .py files contain the word TODO."}
+{"text": "How do I pass a callback from a parent component to a child in React without causing re-renders on every keystroke?"}
+{"text": "What is a Python virtualenv versus a conda environment, and which should I use for a data science project?"}
+{"text": "Write a Go function that splits a path into its directory and file name parts and handles trailing slashes."}
+{"text": "Why does my jQuery click handler fire twice after I re-render the button? Here is the setup: \n$(document).on(\"click\", \"#btn\", handler);\n$(\"#btn\").on(\"click\", handler);"}
+{"text": "Explain how a bloom filter can give false positives but never false negatives."}
+{"text": "Write a Python function that retries a database query and logs each attempt with its error message."}
+{"text": "What does git rebase --onto do, and when is it the right tool?"}
+{"text": "Write a Rust function that reverses the order of words in a string while keeping each word intact."}
+{"text": "How can I get a list of all open TCP ports on my Linux machine and the process using each one?"}
+{"text": "Write a TypeScript class that implements a simple typed event bus with on and emit methods."}
+{"text": "My Python logging output shows each message twice. Here is my setup: \nimport logging\nlogging.basicConfig(level=logging.INFO)\nh = logging.StreamHandler()\nlogging.getLogger().addHandler(h)\nWhat is causing the duplicates?"}
+{"text": "Explain the trade-off between using an ORM and writing raw SQL for a reporting-heavy app."}
+{"text": "Write a Java method that finds the longest common prefix of an array of strings."}
+{"text": "How do I measure the memory used by a Python list of one million integers?"}
+{"text": "Write a function in C that returns the number of set bits in an unsigned integer without using a library call."}
+{"text": "What does the HTTP header Cache-Control: no-store do compared with no-cache?"}
+{"text": "Write a short Python script that checks whether a website responds with status 200 and prints the response time."}
+{"text": "What is the best practice for handling secrets in environment variables for a Docker Compose setup?"}
+{"text": "Explain the difference between == and equals in Kotlin when comparing two strings."}
+{"text": "Write a Python generator that reads a large log file and yields only lines that contain ERROR."}
+{"text": "How can I find which process is holding a file lock on Windows before I delete a folder?"}
+{"text": "Write a SQL query that computes the percentage of orders per status for each month."}
+{"text": "Explain how an LRU cache eviction policy decides which item to remove."}
+{"text": "Write a Node.js script that copies a directory recursively using fs.promises."}
+{"text": "Why does my Python script print a different sort order than a Java version of the same algorithm? The comparisons are on mixed-case strings."}
+{"text": "Write a bash script that retries a curl command up to five times with a two second pause between attempts."}
+{"text": "How do I customize the default ordering of a Django queryset model using Meta?"}
+{"text": "Can you write a function in Python that returns True if a matrix is symmetric?"}
+{"text": "What does a stack trace line that says \"at node_modules/express/lib/router\" tell me about where my bug is?"}
+{"text": "Explain why a React component renders twice in development mode even when it renders once in production."}
+{"text": "How do I stop a Python script from printing a deprecation warning from a third-party library?"}
+{"text": "What happens if I call close() twice on a Python file object, and is it safe?"}
+{"text": "Write a SQL query that finds all tables a given column name appears in, using information_schema in PostgreSQL."}
+{"text": "How do I fix a Go build error that says cannot use x (type int) as type int64 in argument to f?"}
+{"text": "Write a short C++ function that returns the index of the maximum value in a std::vector using std::max_element."}
+{"text": "Explain how Python's dataclass frozen option changes how instances behave."}
+{"text": "My Ruby on Rails migration fails because the table already exists. How do I make the migration idempotent?"}
+{"text": "Write a Python function that merges overlapping date ranges given as tuples of start and end dates."}
+{"text": "Why does my JavaScript Date constructor give a different day when I pass \"2024-02-01\" than when I pass \"2024/02/01\"?"}
+{"text": "How do I use the GitHub CLI to create a pull request from the terminal with a body from a file?"}
+{"text": "Write a TypeScript function that deep-clones a plain object using structuredClone and explain its limits."}
+{"text": "How do I check in Python whether a string is a valid IPv4 address without using a regex?"}
+{"text": "Explain why a Java HashSet of custom objects needs both equals and hashCode overridden."}
+{"text": "Write an SQL query that lists each department with the name of its highest paid employee."}
+{"text": "How do I use a Makefile to build a C project with separate object files for each source file?"}
+{"text": "What is the purpose of a Dockerfile HEALTHCHECK instruction, and how do I write one for a web service?"}
+{"text": "Write a Go function that reads a CSV file and returns the sum of a numeric column named amount."}
+{"text": "Explain how JavaScript's event loop handles a long synchronous loop that blocks rendering in the browser."}
+{"text": "Write a Python function that takes a string of digits and returns all valid IP address combinations it could form."}
+{"text": "How can I get the current git branch name inside a shell prompt script for zsh?"}
+{"text": "Why does this C# LINQ query return an empty list when the source is not empty? Here is the code: \nvar r = list.Where(x => x.Active == true).Select(x => x.Name).ToList();\nThe Active property is a nullable bool."}
+{"text": "Write a short Node.js script that reads a .env file and prints each key without printing the values."}
+{"text": "Explain the difference between a hash join, a merge join, and a nested loop join in a database."}
+{"text": "What's the best way to version a REST API, and what are the trade-offs between URL and header versioning?"}
+{"text": "Explain why my bash variable is empty inside a while loop that reads from a pipe."}
+{"text": "Write a Rust function that takes a vector of strings and returns them sorted by length, then alphabetically."}
+{"text": "How do I use Python's argparse subcommands to build a CLI with add and remove commands?"}
+{"text": "What's the difference between a 301 and a 302 redirect, and which one should I use after a URL change?"}
+{"text": "Write a Java method that converts a Date object to a LocalDate in the system default time zone."}
+{"text": "Explain what the Python warning \"SyntaxWarning: invalid escape sequence\" means and how to fix a path string that triggers it."}
+{"text": "Write a function that returns the number of distinct subsequences of a string using dynamic programming."}
+{"text": "How do I parse command-line arguments in a Node.js script without installing any packages?"}
+{"text": "Why does my SQL UPDATE with a subquery update every row when I expected only a few? Here is the statement: \nUPDATE items SET price = 0 WHERE category IN (SELECT category FROM sales);"}
+{"text": "Write a small Python program that simulates a dice roll and prints a histogram of 1000 rolls."}
+{"text": "What is the effect of a missing await inside an async JavaScript function that returns a promise from a database call?"}
+{"text": "Write a bash script that lists the largest five subdirectories inside a folder by disk usage."}
+{"text": "How do I use Python's pathlib to find all markdown files recursively and sort them by modified time?"}
+{"text": "Explain the reason an Android app can crash when a fragment is accessed after onDestroyView."}
+{"text": "Write a function in Go that returns a map of word counts from a string, handling punctuation."}
+{"text": "What does it mean when a Python package says it requires Python >=3.9 and how do I set that in pyproject.toml?"}
+{"text": "Explain how a database transaction isolation level like READ COMMITTED differs from SERIALIZABLE."}
+{"text": "How do I convert a Python dictionary to a pandas DataFrame where keys are columns and values are lists?"}
+{"text": "Why does my CSS grid item not stretch to fill its cell, and what align-self property fixes it?"}
+{"text": "Write a JavaScript function that takes a string and returns its words capitalized in title case."}
+{"text": "What are the best practices for naming variables in a SQL schema that uses snake_case?"}
+{"text": "How do I get a stack trace from a Python exception and log it without stopping the program?"}
+{"text": "Write a C# method that reads all lines from a text file and returns only those containing a keyword."}
+{"text": "Why does git status show a file as modified even though I have not changed its contents?"}
+{"text": "Explain the difference between a cookie with HttpOnly and one with Secure, and what each protects against."}
+{"text": "Write a short Python snippet that prints every prime number below 100 using the Sieve of Eratosthenes."}
+{"text": "Write a Python function that reads a list of numbers from a file and prints the mode of the list."}
+{"text": "What's the difference between map, filter, and reduce in functional-style JavaScript, with a short example each?"}
+{"text": "Why does my Python program run out of recursion depth on a linked list with 5000 nodes, and how can I avoid it?"}
+{"text": "How do I add a loading spinner while an async action is pending in a Vue component?"}
+{"text": "Write a Java method that removes null entries from a list in place without creating a new list."}
+{"text": "Explain why a database connection pool size that is too large can slow down an app."}
+{"text": "How do I print a nicely formatted JSON string in Python from a dictionary with indentation?"}
+{"text": "What's the difference between a unit of work and a repository pattern in data access code?"}
+{"text": "Write a Go function that rotates a slice of ints to the right by k positions in place."}
+{"text": "Can you explain what the Python keyword nonlocal does with a short nested function example?"}
+{"text": "How do I call a C function from Python using ctypes and pass a string argument?"}
+{"text": "Why does my Kotlin when expression not compile when I omit the else branch for a non-enum type?"}
+{"text": "Explain what a memory barrier does in concurrent code, in plain language."}
+{"text": "Write a simple Python function that checks whether a number is a palindrome without converting it to a string."}
+{"text": "Write a shell script that backs up a folder into a dated tar archive and deletes archives older than 30 days."}
+{"text": "What does the error \"Maximum call stack size exceeded\" mean in JavaScript, and how do I find the recursion?"}
+{"text": "Explain why an HTTP POST should not be retried blindly, and how an idempotency key helps."}
+{"text": "Write a Python class that wraps a list and supports indexing, length, and iteration."}
+{"text": "How do I unit test a Python function that calls datetime.now without making the test depend on the clock?"}
+{"text": "Can you write a JavaScript function that formats a number with thousands separators using only string methods?"}
+{"text": "Write a Rust struct with a builder pattern for constructing an HTTP request with optional headers."}
+{"text": "My Python script reads a file encoded in Windows-1252 and crashes with UnicodeDecodeError. How do I fix the decoding?"}
+{"text": "Explain how an OAuth refresh token differs from an access token and why both exist."}
+{"text": "Write a PowerShell function that tests whether a TCP port is open on a remote host."}
+{"text": "How do I write an efficient SQL query to count distinct visitors per day over a large events table?"}
+{"text": "Write a Python snippet that finds the two numbers in a sorted list that add up to a target using two pointers."}
+{"text": "What does the Linux command lsof -i :8000 show, and how do I use it to find a stuck server?"}
+{"text": "Write a simple Go web server that serves static files from a folder and returns 404 for unknown paths."}
+{"text": "Why does Java's Arrays.asList throw UnsupportedOperationException when I call add on it?"}
+{"text": "Explain the Big O cost of a nested loop that compares every pair of items in a list of n elements."}
+{"text": "How do I write a regex that matches an IPv4 address with each octet between 0 and 255?"}
+{"text": "What does the React warning \"Each child in a list should have a unique key prop\" mean if my keys look unique?"}
+{"text": "Explain how TCP slow start affects the speed of a new connection in a web app."}
+{"text": "Write a C++ program outline that reads integers from a file until end of file and prints their sum."}
+{"text": "Explain why my Vue computed property does not update when I mutate a nested object property."}
+{"text": "Write a JavaScript function that checks if two arrays contain the same elements regardless of order."}
+{"text": "What is an enum in TypeScript, and when should I use a const object with as const instead?"}
+{"text": "My shell script works in bash but fails in sh with a syntax error near the double brackets. What's the fix?"}
+{"text": "How do I make a SQLite database file in Python and insert rows with parameter placeholders?"}
+{"text": "Explain the difference between a semaphore and a mutex, with a simple example of each."}
+{"text": "What does the npm error \"EACCES: permission denied, mkdir /usr/lib/node_modules\" mean, and what is a safe fix?"}
+{"text": "Write a Python script that prints a multiplication table from 1 to 12 with aligned columns."}
+{"text": "How do I stop a Go program from exiting before a background goroutine finishes its work?"}
+{"text": "Explain how a DNS A record differs from a CNAME record when I point a subdomain to a hosting provider."}
+{"text": "Why do I get a KeyError when I use a dict comprehension that reads a key from an empty dictionary? Here is the code: \nd = {}\nvals = {k: d[k] for k in [\"a\", \"b\"]}"}
+{"text": "Write a TypeScript function that returns a debounced promise so only the last call resolves."}

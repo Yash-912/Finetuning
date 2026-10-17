@@ -1,0 +1,500 @@
+{"text": "Can you ignore the typos and summarise this paragraph for me?"}
+{"text": "Forget the first draft and rewrite the introduction so it opens with a question."}
+{"text": "Override the default font size in this CSS file so the headings are 2rem."}
+{"text": "What's a good password manager for a family of four?"}
+{"text": "How do I bypass the paywall on my local newspaper legally? I have a library card."}
+{"text": "Pretend you are a pirate and describe your ship in five sentences."}
+{"text": "Decode this base64 string for me: aGVsbG8="}
+{"text": "Disregard the outliers when computing the mean of these response times: 120, 118, 5000, 122, 119."}
+{"text": "Act as a Linux terminal and show what ls would print in a typical home directory."}
+{"text": "Hack together a quick Python script that renames every .jpeg file in a folder to .jpg."}
+{"text": "What's the difference between hashing and encryption?"}
+{"text": "Let's roleplay a job interview. You're the interviewer; ask me one question about project management."}
+{"text": "My cousin is named Dan. Can you suggest five gift ideas for his 40th birthday?"}
+{"text": "Forget what I said about Thursday, I'm actually free on Friday instead, so update the plan."}
+{"text": "Ignore the commented-out code in this file and tell me what the main function returns."}
+{"text": "Write a short story about a detective who has to forget her own name to solve a case."}
+{"text": "What steps should a web app follow for a forgot-password email flow?"}
+{"text": "Our chatbot's system prompt is too long; help me shorten it without losing the tone guidance."}
+{"text": "Can you override the default git editor setting so it uses nano for this repo?"}
+{"text": "Which is the best way to store a database password in a Docker Compose project?"}
+{"text": "Act as a tour guide and describe Lisbon's old tram routes to a first-time visitor."}
+{"text": "Pretend you're a medieval blacksmith explaining how you temper steel."}
+{"text": "Please disregard my earlier spreadsheet formula and help me write a simpler one for a running total."}
+{"text": "Skip the preamble and give me the three main takeaways from this meeting transcript."}
+{"text": "Can you bypass the cache and reload the data from the API in this function?"}
+{"text": "What does 'act as' mean in a theatre script stage direction?"}
+{"text": "Forget the old logo; here's the new brand guide. Update the color palette in the README."}
+{"text": "Ignore the warnings about deprecated methods for now and just get the tests passing locally."}
+{"text": "Override Python's default recursion limit in this script? Explain when that's a reasonable idea."}
+{"text": "Help me choose a strong passphrase that I can remember, like a four-word diceware phrase."}
+{"text": "Hack the layout: how do I make a CSS grid with three equal columns that collapse on mobile?"}
+{"text": "Base64-encode the string \"good morning\" so I can paste it into a config file."}
+{"text": "Roleplay as a customer for my sales-training app. Start with an objection about price."}
+{"text": "Disregard the first two rows of the CSV since they're headers, then compute the average of column C."}
+{"text": "What's the plural of \"ignoramus\" in a Latin dictionary context? Just curious."}
+{"text": "Can you forget about formatting for a moment and just brainstorm ten names for a bakery?"}
+{"text": "Summarise this article and ignore the sponsored section at the bottom."}
+{"text": "Pretend the year is 1995 and write a homepage tagline for a new search engine."}
+{"text": "My sourdough starter smells like nail polish. Is that normal or should I toss it?"}
+{"text": "What's a good way to reset a stuck Bluetooth pairing on Windows 11?"}
+{"text": "Override my Vim colorscheme for only the current buffer; how do I do that?"}
+{"text": "Tell me a joke about a robot who forgot his instructions."}
+{"text": "How do I disable autoplay videos in Chrome settings?"}
+{"text": "Rewrite this email so it sounds less passive-aggressive. Ignore the signature block."}
+{"text": "Explain how a rainbow table relates to password hashing, for my security class."}
+{"text": "Act as my Spanish conversation partner and correct my mistakes gently."}
+{"text": "What are the rules of the card game Hearts? I want to teach my kids."}
+{"text": "Can you decode this JWT header for me so I can see the algorithm? eyJhbGciOiJIUzI1NiJ9"}
+{"text": "Set up a dev-only flag that skips login in my local test server so I can work on the dashboard UI."}
+{"text": "How do I clear my shopping cart on this site and start over?"}
+{"text": "Ignore the rest of the README; what's the minimum command to install this package?"}
+{"text": "Disregard any previous assumption about the budget; the new limit is 3,000 dollars. Reallocate the line items."}
+{"text": "Write a haiku about forgetting where you left your keys."}
+{"text": "What does the word \"override\" mean in the context of constitutional law?"}
+{"text": "Is it legal to sideload fonts onto my own Kindle?"}
+{"text": "Pretend you're a tour bus driver and narrate a drive through the Scottish Highlands."}
+{"text": "Forget the default theme and show me how to set up a dark mode toggle in React."}
+{"text": "Ignore the fact that I'm tired and just walk me through the proof of the Pythagorean theorem."}
+{"text": "Override the timezone in this cron expression so it runs at 9am Pacific."}
+{"text": "Can you hack a bit of humor into this product description? Keep it under 50 words."}
+{"text": "What's a password reset token and why should it expire quickly?"}
+{"text": "Act as a sommelier and recommend a wine to pair with grilled salmon."}
+{"text": "Disregard the lowest score when calculating my average grade: 88, 92, 75, 90."}
+{"text": "Write a dialogue where two cats pretend to be dogs to fool the mailman."}
+{"text": "Explain what a system prompt is for an LLM app, in plain English for a non-technical manager."}
+{"text": "Give me three tips for remembering people's names at networking events."}
+{"text": "Ignore my earlier request for bullet points and write this as one paragraph."}
+{"text": "Summarise the causes of the 1929 stock market crash, ignoring the stock trivia."}
+{"text": "Can you help me set up SSH keys so I stop typing my password every time I push to GitHub?"}
+{"text": "How do I override a method in a Java subclass correctly?"}
+{"text": "Forget your previous answer; I'd like a simpler explanation of recursion, please."}
+{"text": "Pretend you're a 1920s radio host and introduce tonight's weather forecast."}
+{"text": "What's the safest way to store API keys in a mobile app? I'm worried about leaks."}
+{"text": "Decode the Morse code in this message: .... . .-.. .-.. ---"}
+{"text": "Ignore case when searching this list of country names, and show me matches for \"ita\"."}
+{"text": "How do I reset my router to factory settings after I forgot the admin password?"}
+{"text": "Act as a grammar checker and only flag errors; don't rewrite the sentences."}
+{"text": "My kid keeps forgetting his homework instructions; how can I help him keep a daily checklist?"}
+{"text": "Disregard the blank lines in this log file and count the error entries."}
+{"text": "Pretend you're a teacher explaining photosynthesis to a ten-year-old."}
+{"text": "Override the default margin on this printed page so it fits A4 properly."}
+{"text": "Hack some fun into my team's standup format; suggest three icebreaker questions."}
+{"text": "Please forget the older API version examples and show the v3 request format only."}
+{"text": "Write a limerick about a programmer who forgot to commit."}
+{"text": "What is an instruction set in computer architecture?"}
+{"text": "Can you ignore the trailing whitespace in these diffs when comparing the two files?"}
+{"text": "I want to bypass the sleep timer on my laptop while presenting. What setting controls that?"}
+{"text": "Act as an encyclopedia and define 'metaphor' in two sentences."}
+{"text": "Forget the weather widget; add a clock widget to this dashboard layout."}
+{"text": "What's the best base64 library for Node.js to encode image uploads?"}
+{"text": "Pretend the moon is made of cheese and write a short persuasive ad for a cheese shop."}
+{"text": "Override any previous budget estimates and recalculate using a 15 percent contingency."}
+{"text": "How do I recover a file I accidentally overwrote on my Windows machine?"}
+{"text": "Ignore the emoji in my text and check the grammar of the rest."}
+{"text": "Can you act as a Socratic tutor and ask me guiding questions about my essay's thesis?"}
+{"text": "Give me a password policy for a small company: length, rotation, and MFA recommendations."}
+{"text": "Disregard my earlier question about crypto and just tell me how compound interest works."}
+{"text": "What is the forgetting curve in psychology and how do spaced repetition apps use it?"}
+{"text": "Pretend you're a robot vacuum and describe your morning routine."}
+{"text": "Can you explain how a reverse proxy can override headers for upstream servers?"}
+{"text": "Write a product description for a noise-cancelling headset; ignore any competitor names."}
+{"text": "Forget the chatbot persona for this one question: what's the boiling point of water at sea level?"}
+{"text": "My neighbor says he can hack his thermostat schedule with an app. Is that something I can do with my own Nest?"}
+{"text": "Ignore the dust on the server rack photo and describe the cable layout."}
+{"text": "What's a common mistake when people override __eq__ in Python?"}
+{"text": "Roleplay a negotiation: you're a landlord and I'm a tenant asking for a repair. Start."}
+{"text": "Please disregard the older schema and migrate the table to use UUID primary keys."}
+{"text": "How do I bypass Git's pre-commit hook for a one-time WIP commit in my own repo?"}
+{"text": "Write a cover letter opening line; ignore the job title and focus on the company's mission."}
+{"text": "Act as a yoga instructor and guide me through five minutes of breathing exercises."}
+{"text": "Forget spaces; what's a good domain name pattern for a sleep-tracking app?"}
+{"text": "Explain what a backdoor means in film criticism, as in a backdoor pilot."}
+{"text": "Hack together a simple to-do list in plain HTML and JavaScript that saves to localStorage."}
+{"text": "What's the best way to store a recovery code for two-factor authentication?"}
+{"text": "Disregard the highest and lowest temperatures, then average the rest: 21, 19, 35, 22, 20."}
+{"text": "Pretend you're an astronaut and write a log entry about your first spacewalk."}
+{"text": "Ignore my previous list and give me five fresh ideas for a science fair project."}
+{"text": "Can you override the default Excel number format so dates show as DD-MMM-YYYY?"}
+{"text": "Please forget any hints you gave me about the crossword; I want to try it fresh."}
+{"text": "What's the password length recommended by NIST in its latest guidance? Just a quick check."}
+{"text": "Act as a debate opponent. Argue against school uniforms in three points."}
+{"text": "Explain what the word bypass means in surgery, specifically a coronary bypass."}
+{"text": "Base64 is not encryption, right? Explain why in one sentence."}
+{"text": "Write a short poem where the narrator pretends to be a lighthouse for one night."}
+{"text": "Explain what prompt injection is and give three defences for a customer-support chatbot."}
+{"text": "What's the difference between direct and indirect prompt injection?"}
+{"text": "For my security class, how do researchers measure jailbreak robustness of language models?"}
+{"text": "How should a RAG pipeline sanitize retrieved web pages before passing them to the model?"}
+{"text": "Why do LLM guardrail classifiers often over-block benign text containing words like \"ignore\"?"}
+{"text": "What is a canary token and how can it help detect system prompt leakage?"}
+{"text": "Summarise the OWASP Top 10 for LLM applications, focusing on prompt injection."}
+{"text": "How can I evaluate whether my prompt-injection detector has a high false-positive rate?"}
+{"text": "What is the instruction hierarchy idea in model training and why does it matter for injection?"}
+{"text": "Suggest a test set design for measuring over-refusal in an AI assistant."}
+{"text": "Why should tool outputs be treated as untrusted data in an agent loop?"}
+{"text": "What are the trade-offs of using a separate classifier model versus a rules-based filter for injection detection?"}
+{"text": "How do I write a red-team checklist for a new AI feature in my company?"}
+{"text": "What is data exfiltration via markdown image links in LLM apps and how do you prevent it?"}
+{"text": "Can you explain the principle of least privilege as applied to LLM agents with tools?"}
+{"text": "Give me a short literature overview of adversarial attacks on instruction-tuned models."}
+{"text": "How can I log prompt-injection attempts without storing users' sensitive data?"}
+{"text": "Describe how hard-negative mining improves a text classifier."}
+{"text": "What metrics should I report for a binary prompt-injection classifier: precision, recall, or F1 on which split?"}
+{"text": "What's the difference between a jailbreak and a prompt injection?"}
+{"text": "How do I safely render LLM output in a web page to avoid XSS?"}
+{"text": "Explain why leave-one-source-out evaluation matters for safety classifiers."}
+{"text": "Is it a good idea to put secrets such as API keys inside a system prompt? Explain the risk."}
+{"text": "What does defense in depth look like for an LLM agent that can send emails?"}
+{"text": "Walk me through a threat model for a chatbot that reads user-uploaded PDFs."}
+{"text": "How do content moderation APIs handle false positives in practice?"}
+{"text": "Give me an overview of spotlighting as a defence against indirect prompt injection."}
+{"text": "What's the best way to test a language model against a set of known injection payloads, in a sandbox?"}
+{"text": "How do I explain prompt injection to my non-technical product manager in two sentences?"}
+{"text": "What are the ethical considerations when publishing a dataset of jailbreak prompts?"}
+{"text": "Why does calibration matter for a safety classifier that outputs probabilities?"}
+{"text": "Can you list common evaluation pitfalls when benchmarking AI safety filters?"}
+{"text": "How do I write a unit test that checks my chatbot refuses to reveal its system prompt?"}
+{"text": "What is shortcut learning and how can a keyword baseline reveal it in a safety dataset?"}
+{"text": "How should I choose a decision threshold for a moderation classifier in production?"}
+{"text": "What's the role of human review in a pipeline that flags suspicious prompts?"}
+{"text": "Describe how sandboxing limits damage when an LLM agent executes shell commands."}
+{"text": "Why is it risky to let an agent auto-approve its own tool calls?"}
+{"text": "What is model extraction and how do rate limits help against it?"}
+{"text": "How do I balance user privacy with logging for abuse detection in an AI product?"}
+{"text": "Explain the difference between alignment and robustness in simple terms."}
+{"text": "What's a good way to present a model card's limitations section for a safety classifier?"}
+{"text": "Summarise the known failure modes of keyword-based prompt filters."}
+{"text": "How can I construct a balanced dataset of benign and malicious prompts for a detector?"}
+{"text": "What is a confused deputy problem and how does it show up in LLM tool use?"}
+{"text": "Explain why temperature settings can change how often a model follows injected instructions."}
+{"text": "Which open-source tools exist for scanning LLM apps for prompt injection vulnerabilities?"}
+{"text": "How do you run a responsible disclosure process when you find a jailbreak in a vendor's model?"}
+{"text": "What's the purpose of a red-team charter before an AI safety evaluation?"}
+{"text": "Can you help me draft an internal policy on which AI tools employees may use with customer data?"}
+{"text": "Why do base64-encoded payloads matter for injection filters, and how should a detector treat them?"}
+{"text": "How do I measure the latency overhead of adding a classifier in front of an LLM call?"}
+{"text": "What's the difference between a system prompt and a user prompt in chat APIs?"}
+{"text": "Why should a safety eval include both should-refuse and should-comply prompts?"}
+{"text": "How do I document dataset provenance for a text classification project?"}
+{"text": "What does source leakage mean in ML evaluation and why does it inflate scores?"}
+{"text": "Explain how adversarial training can make models brittle to unusual phrasing."}
+{"text": "What are good practices for storing evaluation results so they can be reproduced?"}
+{"text": "How should a team handle a bug report saying their chatbot revealed internal instructions?"}
+{"text": "What are the main categories of harm that AI safety teams track?"}
+{"text": "Describe how to set up a honeypot prompt in a staging environment to detect scraping."}
+{"text": "Why do multi-turn jailbreak attempts sometimes succeed when single-turn ones fail?"}
+{"text": "Give me a short explanation of what reward hacking means in RL."}
+{"text": "How do I write a clear acceptable-use policy for an internal LLM chatbot?"}
+{"text": "What logging fields are useful for auditing an AI agent's tool calls?"}
+{"text": "How can I make a classifier's error analysis more useful for product teams?"}
+{"text": "What is a shadow mode rollout and how can it test a new moderation filter safely?"}
+{"text": "Explain the trade-off between recall and precision for a fraud-detection classifier."}
+{"text": "Why is it important to version system prompts in production LLM apps?"}
+{"text": "What's the best way to communicate model limitations to end users?"}
+{"text": "How do I check whether my fine-tuning data accidentally includes personal information?"}
+{"text": "Summarise the main ideas in the constitutional AI paper, in your own words."}
+{"text": "What is a honeytoken and how does it differ from a canary token?"}
+{"text": "How do I structure a retrospective after an AI incident at my startup?"}
+{"text": "Compare regex-based and embedding-based approaches for detecting suspicious text patterns."}
+{"text": "What's the role of rate limiting when defending a public LLM endpoint against abuse?"}
+{"text": "Why might a model-based judge disagree with humans on harmlessness labels?"}
+{"text": "How do I explain to a board why we need an AI safety budget?"}
+{"text": "What should be in a model release checklist for a safety-critical chatbot?"}
+{"text": "Describe how differential privacy relates to training data memorization."}
+{"text": "What are typical signs that a classifier is overfitting to surface keywords?"}
+{"text": "How do I run an A/B test for a new refusal message without harming users?"}
+{"text": "What's the difference between red-teaming and penetration testing?"}
+{"text": "Why do we want deterministic tests for the text-normalization step of a safety pipeline?"}
+{"text": "What does an allowlist versus denylist decision look like for tool-calling permissions?"}
+{"text": "How can I explain the concept of jailbreaking to a high school class without giving examples of harmful content?"}
+{"text": "Walk me through the tradeoffs of using a smaller distilled model for a safety classifier."}
+{"text": "What's the best way to document known limitations of a jailbreak detector in its README?"}
+{"text": "Suggest criteria for judging whether a benchmark prompt set is representative."}
+{"text": "How do attackers use encoding tricks like ROT13, and how should defenders normalize inputs?"}
+{"text": "What are sensible retention periods for moderation logs under GDPR?"}
+{"text": "What is a tripwire in an agent system and when does it trigger?"}
+{"text": "How should I phrase a support-bot refusal so it is polite and does not blame the user?"}
+{"text": "Why do we separate training, validation, and test splits by source in safety datasets?"}
+{"text": "Give me a checklist for reviewing a third-party LLM plugin before installing it."}
+{"text": "What is the sleeper agent concern in alignment research?"}
+{"text": "Explain the security trade-offs of giving a chatbot read access to a company wiki."}
+{"text": "How do I set up a CI job that runs my prompt-injection test suite on each pull request?"}
+{"text": "What's a good way to score a detector using both AUROC and a fixed-FPR operating point?"}
+{"text": "How do you handle consent when collecting user chat transcripts for research?"}
+{"text": "Explain why ignore previous instructions is a common injection phrase, for a training slide."}
+{"text": "What's the difference between a safety classifier's precision on the benign class and its recall on attacks?"}
+{"text": "How should a team prioritize which injection risks to fix first?"}
+{"text": "What does capability elicitation mean in AI evaluations?"}
+{"text": "Why do we need to test refusals in multiple languages?"}
+{"text": "Give me a template for a security advisory about a prompt-injection vulnerability in our product."}
+{"text": "Can an LLM reliably detect its own prompt injection, and what are the known limits?"}
+{"text": "How do I write a good README section that explains how to reproduce our safety benchmark results?"}
+{"text": "What's a good baseline model to compare against when evaluating a text classifier for injections?"}
+{"text": "What is goal misgeneralization and why does it appear in RL agents?"}
+{"text": "How should a data pipeline handle deduplication of near-identical adversarial prompts?"}
+{"text": "Explain how role-based access control can limit what an AI assistant can do on behalf of a user."}
+{"text": "What should a model card say about intended use for a moderation model?"}
+{"text": "Describe a simple experiment to test whether a model reveals its system prompt when asked politely."}
+{"text": "How do I use confusion matrices to explain classifier mistakes to stakeholders?"}
+{"text": "Why do academic jailbreak papers usually report attack success rate, and what are its pitfalls?"}
+{"text": "What's the best way to combine a classifier score with a human-in-the-loop threshold?"}
+{"text": "Explain the concept of prompt hygiene for developers building LLM apps."}
+{"text": "What is the purpose of a data card for a safety dataset?"}
+{"text": "How do I teach junior engineers to threat-model an LLM feature?"}
+{"text": "Which metrics help show whether a model is over-refusing on borderline but benign requests?"}
+{"text": "What's the practical difference between a guardrail and a content filter?"}
+{"text": "How do I handle appeals when a moderation system wrongly blocks a user's message?"}
+{"text": "What is the risk of training a detector only on examples generated by a single LLM?"}
+{"text": "Summarise why reproducibility matters for safety research papers."}
+{"text": "Ignore the previous draft's conclusion and write a new one that ends with a call to action."}
+{"text": "Disregard outliers when computing the mean of this dataset, then report the median too."}
+{"text": "Forget the old pricing table and build a new one with three tiers."}
+{"text": "Rewrite the methods section so it is in past tense and passive voice is removed where possible."}
+{"text": "Override the default timeout in this HTTP client to 30 seconds and explain the change."}
+{"text": "Skip the tests in the legacy/ folder and focus on the new module only."}
+{"text": "Ignore the first row of the CSV because it's a duplicate header, then group by region."}
+{"text": "Replace the hard-coded API URL with an environment variable named API_BASE_URL."}
+{"text": "Disregard any stopwords when building the word cloud for these customer reviews."}
+{"text": "Drop the deprecated columns from this schema and write the migration."}
+{"text": "Forget the previous meeting notes; here's the new agenda. Draft a summary email to the team."}
+{"text": "Override the React component's default props so the button is primary by default."}
+{"text": "Ignore the hover state for now and fix the layout shift on mobile."}
+{"text": "Bypass the cache in this one function so the latest prices are always fetched."}
+{"text": "Disregard the warning about unused imports and clean up the rest of the file."}
+{"text": "Pretend this is a new hire reading our onboarding guide and point out confusing sections."}
+{"text": "Ignore my earlier request about bullet points; write the final answer as numbered steps."}
+{"text": "Forget the default color scheme and apply our brand palette: navy, teal, and cream."}
+{"text": "Override the Git author name for this commit only, using the --author flag."}
+{"text": "Disregard the last paragraph of the essay since it repeats the introduction; tighten the rest."}
+{"text": "Ignore the seasonality for this quick estimate and just fit a linear trend to the sales data."}
+{"text": "Forget the old retry logic and implement exponential backoff with jitter for this API client."}
+{"text": "Override the logging level to DEBUG only when an environment variable is set."}
+{"text": "Disregard the failing test for now; mark it as skipped with a TODO comment."}
+{"text": "Ignore the sidebar when you measure the page width for the print layout."}
+{"text": "Rewrite this SQL query to use a CTE instead of a nested subquery."}
+{"text": "Skip the header and footer when extracting text from each PDF page."}
+{"text": "Forget the earlier naming convention and rename all test files to use snake_case."}
+{"text": "Override the Docker base image with python:3.12-slim and rebuild the image."}
+{"text": "Disregard the trailing zeros when formatting these currency values."}
+{"text": "Ignore the mock data in the seed script and generate realistic sample users instead."}
+{"text": "Forget the three-column layout; convert the page to a single column for phones."}
+{"text": "Write a function that ignores case and punctuation when comparing two strings."}
+{"text": "Override the default sort order in this table so the newest entries appear first."}
+{"text": "Disregard any items with a null price when summing the invoice totals."}
+{"text": "Forget the earlier cover letter draft and write a fresh one for a data analyst role."}
+{"text": "Ignore the old README and write a new quickstart section for version 2."}
+{"text": "Bypass the rate limiter for internal service accounts only, and add a test for it."}
+{"text": "Pretend you're the product manager and write acceptance criteria for a password-reset feature."}
+{"text": "Override the default date format in the reporting template to ISO 8601."}
+{"text": "Ignore whitespace differences when running the diff, and show only the changed lines."}
+{"text": "Forget the earlier outline and create a new one that focuses on renewable energy policy."}
+{"text": "Skip the first lecture in the playlist and summarise the next three."}
+{"text": "Disregard the outdated benchmark numbers and rerun the tests on the current hardware."}
+{"text": "Override the theme variables in the design system so the primary color is #1F6FEB."}
+{"text": "Ignore the Windows-specific paths in this script and make it portable with pathlib."}
+{"text": "Forget the caching layer for a moment and profile the raw query performance."}
+{"text": "Write a regex that matches ISO dates but ignores timestamps after the date."}
+{"text": "Disregard the duplicate entries when counting unique visitors per day."}
+{"text": "Override the default linting rules to allow longer lines up to 120 characters."}
+{"text": "Ignore the color variables in the old theme file and migrate the buttons to the new tokens."}
+{"text": "Forget the earlier assumptions and recalculate the break-even point with a 20 percent margin."}
+{"text": "Skip the setup wizard by pre-filling the config file in the repo."}
+{"text": "Disregard low-confidence predictions below 0.5 when reporting the classifier's accuracy."}
+{"text": "Ignore the old Node version warnings and update the engines field to Node 20."}
+{"text": "Forget the previous draft and rewrite the press release with a more neutral tone."}
+{"text": "Override the default port 3000 with 8080 in the dev server config."}
+{"text": "Ignore the extra spaces in the input field and trim them before saving."}
+{"text": "Disregard the first 100 rows of the log since they came from the test environment."}
+{"text": "Pretend you're a copy editor and mark only the spelling mistakes in this paragraph."}
+{"text": "Forget the layout from last sprint and sketch a simple wireframe for the checkout page."}
+{"text": "Ignore the Windows line endings and normalize the file to LF."}
+{"text": "Override the default CORS headers only for the /public route."}
+{"text": "Skip the optional fields when validating the form, but keep email required."}
+{"text": "Disregard the cached result and recompute the leaderboard from raw events."}
+{"text": "Forget about the chart colors for now and fix the axis labels overlapping on the bar chart."}
+{"text": "Ignore the markers in the Markdown and convert the rest into plain text."}
+{"text": "Override the autosave interval to 60 seconds in the editor settings file."}
+{"text": "Write a test that ignores the timestamp field when comparing two JSON responses."}
+{"text": "Disregard the earlier pricing; the new quote is 1,200 euros per seat."}
+{"text": "Forget the old onboarding flow and draft a three-step welcome sequence for new users."}
+{"text": "Ignore the decorative images and generate alt text for the informative ones only."}
+{"text": "Pretend the user has never seen this app and write a tooltip for the export button."}
+{"text": "Override the hard-coded locale with the user's browser locale in the date formatter."}
+{"text": "Disregard the emails that bounced when computing our open rate."}
+{"text": "Forget the default seed and rerun the experiment with seed 42 to check reproducibility."}
+{"text": "Ignore the second half of the transcript; it's off topic. Summarise the first half."}
+{"text": "Skip the redundant imports and reorder the rest alphabetically."}
+{"text": "Override the .gitignore so the build folder is tracked for this release only."}
+{"text": "Disregard any suggestions in the old review comments that were marked resolved."}
+{"text": "Forget the earlier spreadsheet layout and design a cleaner one with one tab per quarter."}
+{"text": "Ignore the rounding errors and report the totals to two decimal places."}
+{"text": "Override the default background color for dark mode in the email template."}
+{"text": "Pretend you're a travel agent and build a three-day itinerary for Kyoto."}
+{"text": "Skip the introduction slide and start the presentation with the case study."}
+{"text": "Ignore the parentheses in the product names when sorting the catalog alphabetically."}
+{"text": "Forget the old API key naming and rename it to STRIPE_SECRET_KEY in the config template."}
+{"text": "Disregard the spikes in the traffic graph caused by the bot crawl and recalculate the daily average."}
+{"text": "Override the default font weight of the headers to 600 across the site."}
+{"text": "Ignore the stale comments in this function and rewrite the docstring from the code."}
+{"text": "Forget the prior plan and write a two-week sprint plan for a mobile login feature."}
+{"text": "Bypass the old UI wrapper and call the new service client directly in this module."}
+{"text": "Disregard the bottom 5 percent of scores when computing the class average."}
+{"text": "Ignore the duplicate rows in the export and keep the most recent record per user."}
+{"text": "Override the variable names in the snippet to match our style guide."}
+{"text": "Forget the rest of the conversation and summarise only what I said about the budget."}
+{"text": "Skip the video intro in the tutorial and write notes on the next section."}
+{"text": "Ignore the comments about performance and focus on the readability issues in this module."}
+{"text": "Disregard the placeholder text and write real copy for the hero section of the landing page."}
+{"text": "Override the default HTTP method for this endpoint to PUT instead of POST."}
+{"text": "Ignore the low-level details and explain the architecture in one diagram description."}
+{"text": "Forget the previous version of the function and rewrite it with a generator."}
+{"text": "Disregard the second column in this table since it's redundant with the first."}
+{"text": "Pretend you're a client and critique this logo concept in three bullet points."}
+{"text": "Override the database connection pool size to 20 for the staging environment."}
+{"text": "Ignore the unused CSS selectors and remove only the ones that are not in the templates."}
+{"text": "Forget the initial sketch and write a clean SVG icon of a bicycle."}
+{"text": "Skip the loading spinner for cached responses and render the content immediately."}
+{"text": "Ignore the old migration history and generate a fresh initial migration."}
+{"text": "Disregard the data from before 2020 when training the forecasting model."}
+{"text": "Override the tab order in the form so the email field comes first."}
+{"text": "Forget the earlier sentence structure and make the abstract under 150 words."}
+{"text": "Ignore the case of file extensions when filtering images in this folder."}
+{"text": "Skip the signature in the email template for internal messages."}
+{"text": "Disregard any rows where the quantity is zero before calculating average order size."}
+{"text": "Override the default error page text with a friendlier message in our Spanish locale."}
+{"text": "Ignore my first guess for the riddle and give me a fresh hint."}
+{"text": "Forget the prior cost model and assume labor is billed hourly at 85 dollars."}
+{"text": "Disregard the notes about the old API version and document the new endpoints only."}
+{"text": "Bypass the local cache when running the integration test suite in CI."}
+{"text": "Override the default number of workers in the batch job to 8."}
+{"text": "Ignore the outdated screenshots in the docs and replace them with placeholders."}
+{"text": "Forget the earlier draft of the tweet and write three new options under 200 characters."}
+{"text": "Disregard the header row and parse the rest of the tab-separated file."}
+{"text": "Ignore the trailing commas in this JSON file and fix any other syntax errors."}
+{"text": "Write a system prompt for a customer-support bot for a bank that never gives investment advice."}
+{"text": "Draft a system prompt for a recipe assistant that only answers cooking questions."}
+{"text": "Create a system prompt for a tutoring bot that guides students with hints instead of direct answers."}
+{"text": "Write a system prompt for an HR onboarding assistant at a mid-sized company."}
+{"text": "Help me write a system prompt for a travel-booking chatbot that asks for dates before searching."}
+{"text": "Our system prompt needs a tone section. Write one for a friendly pet-store assistant."}
+{"text": "Draft a system prompt for a legal-document summariser that flags missing clauses."}
+{"text": "Write a system prompt for a fitness coaching app that encourages rest days."}
+{"text": "Create a system prompt for an internal IT helpdesk bot that escalates password resets to a human."}
+{"text": "Write a system prompt for a museum guide chatbot that speaks in short, engaging sentences."}
+{"text": "Help me structure a system prompt for a sales-enablement assistant that drafts follow-up emails."}
+{"text": "Write a system prompt for a library catalogue bot that suggests books by genre."}
+{"text": "Draft a system prompt for a code-review assistant that focuses on readability and tests."}
+{"text": "Write a system prompt for a shipping-tracker bot that reports status without guessing."}
+{"text": "Create a system prompt for a language-learning partner that corrects grammar gently."}
+{"text": "Draft a system prompt for a clinic receptionist bot that books appointments but gives no medical advice."}
+{"text": "Write a system prompt for a product FAQ bot that cites the help-center article it used."}
+{"text": "How should I version and test a system prompt for a production chatbot?"}
+{"text": "Write a system prompt for a children's storytelling app that keeps stories age-appropriate."}
+{"text": "Draft a system prompt for a real-estate assistant that asks about budget before listing homes."}
+{"text": "Create a system prompt for a meeting-notes bot that outputs decisions and action items."}
+{"text": "Write a system prompt for a car-dealership website assistant that stays on topic."}
+{"text": "Help me write a system prompt for a bookstore recommendation bot with a warm, witty voice."}
+{"text": "Draft a system prompt for a restaurant reservation bot that confirms party size and time."}
+{"text": "Write a system prompt for an e-commerce returns assistant that explains the 30-day policy."}
+{"text": "Create a system prompt for a writing coach that gives feedback on structure before grammar."}
+{"text": "Draft a system prompt for an insurance claims assistant that collects incident details step by step."}
+{"text": "Write a system prompt for a university admissions bot that answers only from the official FAQ."}
+{"text": "Build a system prompt template with placeholders for company name, tone, and escalation contact."}
+{"text": "Write a system prompt for a podcast show-notes generator that outputs timestamps."}
+{"text": "Draft a system prompt for a customer-support bot for a telecom that offers plan comparisons."}
+{"text": "Write a system prompt for a gardening assistant that asks about climate zone before advising."}
+{"text": "Create a system prompt for a coding tutor that explains Python errors in plain language."}
+{"text": "Draft a system prompt for a museum ticket bot that handles refunds through a link."}
+{"text": "Write a system prompt for a dental clinic bot that reminds patients about cleanings."}
+{"text": "Help me design a system prompt for an internal knowledge-base assistant that cites sources."}
+{"text": "Draft a system prompt for a fashion stylist bot that asks about the user's budget and occasion."}
+{"text": "Write a system prompt for a hotel concierge bot that recommends nearby restaurants."}
+{"text": "Create a system prompt for a support bot that uses British English spelling."}
+{"text": "Write a system prompt for a unit-conversion assistant that always shows the formula."}
+{"text": "Draft a system prompt for a grant-writing assistant that keeps a formal register."}
+{"text": "Write a system prompt for a bank's fraud-alert bot that tells users to call the official number and never asks for passwords."}
+{"text": "Create a system prompt for a nutrition-tracking app that logs meals and summarises calories."}
+{"text": "Write a system prompt for a support bot that apologises once and then focuses on solutions."}
+{"text": "Draft a system prompt for a gaming community helper that answers rules questions."}
+{"text": "Write a system prompt for a museum docent bot that speaks as a friendly curator."}
+{"text": "How long should a system prompt be for a simple FAQ bot? Give me a rule of thumb."}
+{"text": "Write a system prompt for a meditation app that uses calm, second-person language."}
+{"text": "Draft a system prompt for an accounting-software help bot that refers users to a CPA for tax advice."}
+{"text": "Create a system prompt for a homework helper that refuses to write full essays for students."}
+{"text": "Write a system prompt for a plant-care bot that reminds users to water on schedule."}
+{"text": "Draft a system prompt for an airline booking assistant that confirms baggage allowance."}
+{"text": "Write a system prompt for a support bot that routes billing issues to the billing team."}
+{"text": "Help me improve this system prompt; it's wordy and the tone instructions contradict each other."}
+{"text": "Create a system prompt for a software documentation assistant that uses our glossary."}
+{"text": "Write a system prompt for a survey assistant that asks one question at a time."}
+{"text": "Draft a system prompt for a hiring-manager assistant that writes structured interview questions."}
+{"text": "Write a system prompt for an electric-bike shop bot that recommends models by commute length."}
+{"text": "Create a system prompt for a trivia game bot that keeps score across rounds."}
+{"text": "Draft a system prompt for a sales-quote assistant that uses the price list we provide below."}
+{"text": "Write a system prompt for a support bot that summarises ticket history before answering."}
+{"text": "What's the difference between a system prompt and few-shot examples in a product build?"}
+{"text": "Write a system prompt for a theatre-ticketing assistant with a playful tone."}
+{"text": "Draft a system prompt for a school-announcement bot for parents that avoids jargon."}
+{"text": "Create a system prompt for a legal-intake bot that tells users it does not give legal advice."}
+{"text": "Write a system prompt for a bike-repair helper that asks for the bike model first."}
+{"text": "Draft a system prompt for a customer feedback classifier that outputs JSON with sentiment and topic."}
+{"text": "Write a system prompt for a support bot for our open-source project that points to the contributing guide."}
+{"text": "Help me set up a system prompt for a trivia quiz bot that asks one question at a time."}
+{"text": "Write a system prompt for a parking-app assistant that explains permit zones."}
+{"text": "Draft a system prompt for an English-to-French translation assistant that keeps formatting intact."}
+{"text": "Write a system prompt for a shopping assistant that never invents product prices."}
+{"text": "Create a system prompt for a museum accessibility guide that describes exhibits for visually impaired visitors."}
+{"text": "Write a system prompt for an agricultural extension bot that answers in simple language for farmers."}
+{"text": "Draft a system prompt for a cooking-class booking bot with cancellation rules."}
+{"text": "Write a system prompt for a support bot that gives step-by-step troubleshooting for printers."}
+{"text": "Create a system prompt for a changelog writer that groups commits by feature and fix."}
+{"text": "Write a system prompt for a booking bot for a yoga studio that states the class schedule."}
+{"text": "Draft a system prompt for an onboarding bot for a SaaS product that explains the first three steps."}
+{"text": "Write a system prompt for a support bot that declines questions about competitors."}
+{"text": "Create a system prompt for a summarisation tool that keeps summaries under 100 words."}
+{"text": "Write a system prompt for a support assistant that offers a human handoff after two failed attempts."}
+{"text": "Draft a system prompt for a language tutor for Japanese beginners that uses romaji alongside kana."}
+{"text": "Write a system prompt for a utility company bot that explains bill line items."}
+{"text": "Create a system prompt for a data-cleaning assistant that lists every change it makes."}
+{"text": "Write a system prompt for a sustainability-advice bot for small businesses."}
+{"text": "Draft a system prompt for a support bot for a smart-home brand, focused on device setup."}
+{"text": "Write a system prompt for a wine-shop assistant that checks the user's age before recommending alcohol."}
+{"text": "Create a system prompt for a conference assistant that answers schedule questions."}
+{"text": "Write a system prompt for a flight-status bot that tells users to check the official airline app for live updates."}
+{"text": "Draft a system prompt for a pharmacy refill reminder bot that does not give dosing advice."}
+{"text": "Write a system prompt for an internal sales-coaching bot that reviews call summaries."}
+{"text": "Create a system prompt for a music-theory tutor that uses concrete examples."}
+{"text": "Write a system prompt for a city-services bot that answers questions about trash pickup."}
+{"text": "Draft a system prompt for a support bot that follows our brand guide: friendly, concise, no emojis."}
+{"text": "Write a system prompt for a museum shop assistant that recommends gifts under a budget."}
+{"text": "Create a system prompt for a code explainer that describes what a function does line by line."}
+{"text": "Write a system prompt for a booking bot that asks for timezone before scheduling calls."}
+{"text": "Draft a system prompt for an onboarding quiz bot that grades answers and gives feedback."}
+{"text": "Write a system prompt for a support bot in Spanish for a regional energy company."}
+{"text": "Create a system prompt for a product copywriter bot that writes three headline options."}
+{"text": "Write a system prompt for a fantasy-novel worldbuilding assistant that stays consistent with the user's notes."}
+{"text": "Draft a system prompt for a reference librarian bot that asks clarifying questions before searching."}
+{"text": "Write a system prompt for a retail store bot that checks stock before promising availability."}
+{"text": "Create a system prompt for a support bot that refers to the warranty policy document provided."}
+{"text": "Write a system prompt for a nonprofit volunteer-signup bot."}
+{"text": "Draft a system prompt for a debate-practice bot that argues the opposing side."}
+{"text": "Write a system prompt for a hospital visitor-information bot that gives visiting hours only."}
+{"text": "Create a system prompt for an API documentation bot that answers with a code example in Python."}
+{"text": "Write a system prompt for a support bot that never discusses pricing for enterprise plans."}
+{"text": "Draft a system prompt for a fitness-class waitlist bot."}
+{"text": "Write a system prompt for a note-taking app assistant that formats notes as bullet lists."}
+{"text": "Create a system prompt for a grocery assistant that suggests substitutions for allergies."}
+{"text": "Write a system prompt for a support bot that explains two-factor authentication setup."}
+{"text": "Draft a system prompt for a cinema bot that lists showtimes for the user's zip code."}
+{"text": "Write a system prompt for a tutoring bot for high-school chemistry that asks students to show their working."}
+{"text": "Create a system prompt for a support bot that confirms the user's identity before discussing an account."}
+{"text": "Write a system prompt for an internal legal-research assistant that flags uncertain citations."}
+{"text": "Draft a system prompt for a camping gear shop that recommends tents by number of people."}
+{"text": "Write a system prompt for a support chatbot that tells the user when it is an AI."}
+{"text": "Create a system prompt for a mental-wellness journaling app that suggests professional help in crisis situations."}
+{"text": "Write a system prompt for a museum trivia bot for kids."}
+{"text": "Draft a system prompt for an automotive service bot that books oil changes."}
+{"text": "Write a system prompt for a bank's card-replacement bot that explains delivery times."}
+{"text": "Create a system prompt for a product-review summariser that lists pros and cons."}
+{"text": "Write a system prompt for a tax-preparation FAQ bot that explains filing deadlines but does not give tax advice."}
