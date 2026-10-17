@@ -34,9 +34,10 @@ from src.utils.config import load_config
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)-8s | %(message)s")
 logger = logging.getLogger("calibrate")
 
-MODEL_DIR = "models/qwen-injection-detector/best"
+MODEL_DIR = "models/qwen-injection-detector/best"  # overridable with --model-dir
 VAL_PATH = "data/processed/val.parquet"
 OUTPUT_DIR = Path("eval")
+MODEL_DIR_RUNTIME = MODEL_DIR
 
 
 def compute_ece(logits: torch.Tensor, labels: torch.Tensor, T: float = 1.0, n_bins: int = 10) -> float:
@@ -62,6 +63,13 @@ def compute_nll(logits: torch.Tensor, labels: torch.Tensor, T: float) -> float:
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--model-dir", default=MODEL_DIR)
+    args = ap.parse_args()
+    global MODEL_DIR_RUNTIME
+    MODEL_DIR_RUNTIME = args.model_dir
+
     logger.info("Loading config...")
     cfg = load_config("configs/training_config.yaml")
 
@@ -70,7 +78,7 @@ def main():
 
     base_name = cfg["model"]["base_model_name"]
     max_length = cfg["model"]["max_length"]
-    model_dir = Path(MODEL_DIR)
+    model_dir = Path(MODEL_DIR_RUNTIME)
 
     logger.info("Loading tokenizer: %s", base_name)
     tokenizer = AutoTokenizer.from_pretrained(base_name)
@@ -169,7 +177,8 @@ def main():
         "nll_values": {str(k): round(float(v), 4) for k, v in nll_values.items()},
         "val_size": len(labels),
     }
-    metrics_path = OUTPUT_DIR / "calibration_metrics.json"
+    tag = "" if Path(MODEL_DIR_RUNTIME) == Path(MODEL_DIR) else f"_{Path(MODEL_DIR_RUNTIME).name}"
+    metrics_path = OUTPUT_DIR / f"calibration_metrics{tag}.json"
     with open(metrics_path, "w") as f:
         json.dump(metrics, f, indent=2)
     logger.info("Metrics saved: %s", metrics_path)
@@ -211,7 +220,7 @@ def main():
             ax.grid(alpha=0.3)
 
         fig.tight_layout()
-        fig_path = OUTPUT_DIR / "calibration_curve.png"
+        fig_path = OUTPUT_DIR / f"calibration_curve{tag}.png"
         fig.savefig(fig_path, dpi=150)
         logger.info("Calibration curve saved: %s", fig_path)
     except ImportError:
