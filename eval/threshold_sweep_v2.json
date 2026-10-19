@@ -1,0 +1,222 @@
+{
+  "model_dir": "models\\qwen-injection-detector-v2\\best",
+  "temperature": 3.0866,
+  "sets": {
+    "test": {
+      "n": 2197,
+      "injections": 737,
+      "benign": 1460,
+      "by_threshold": [
+        {
+          "threshold": 0.5,
+          "precision": 0.989,
+          "recall": 0.9769,
+          "fpr": 0.0055
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.9917,
+          "recall": 0.9729,
+          "fpr": 0.0041
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.993,
+          "recall": 0.9674,
+          "fpr": 0.0034
+        },
+        {
+          "threshold": 0.75,
+          "precision": 0.993,
+          "recall": 0.962,
+          "fpr": 0.0034
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.9929,
+          "recall": 0.9552,
+          "fpr": 0.0034
+        },
+        {
+          "threshold": 0.85,
+          "precision": 0.9929,
+          "recall": 0.9512,
+          "fpr": 0.0034
+        },
+        {
+          "threshold": 0.9,
+          "precision": 0.9943,
+          "recall": 0.9417,
+          "fpr": 0.0027
+        },
+        {
+          "threshold": 0.95,
+          "precision": 0.9956,
+          "recall": 0.9213,
+          "fpr": 0.0021
+        },
+        {
+          "threshold": 0.98,
+          "precision": 0.9985,
+          "recall": 0.8833,
+          "fpr": 0.0007
+        },
+        {
+          "threshold": 0.99,
+          "precision": 1.0,
+          "recall": 0.844,
+          "fpr": 0.0
+        }
+      ],
+      "recall_at_1pct_fpr": {
+        "target_fpr": 0.01,
+        "threshold": 0.2888,
+        "recall": 0.9824
+      }
+    },
+    "benign_test": {
+      "n": 200,
+      "injections": 0,
+      "benign": 200,
+      "by_threshold": [
+        {
+          "threshold": 0.5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.75,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.85,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.9,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.95,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.98,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.99,
+          "precision": 0.0,
+          "recall": 0.0,
+          "fpr": 0.0
+        }
+      ],
+      "recall_at_1pct_fpr": {
+        "target_fpr": 0.01,
+        "threshold": 0.0463,
+        "recall": NaN
+      }
+    },
+    "adversarial": {
+      "n": 47,
+      "injections": 43,
+      "benign": 4,
+      "by_threshold": [
+        {
+          "threshold": 0.5,
+          "precision": 1.0,
+          "recall": 0.8837,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.6,
+          "precision": 1.0,
+          "recall": 0.8837,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.7,
+          "precision": 1.0,
+          "recall": 0.8837,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.75,
+          "precision": 1.0,
+          "recall": 0.8837,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "precision": 1.0,
+          "recall": 0.8837,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.85,
+          "precision": 1.0,
+          "recall": 0.8605,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.9,
+          "precision": 1.0,
+          "recall": 0.8605,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.95,
+          "precision": 1.0,
+          "recall": 0.8372,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.98,
+          "precision": 1.0,
+          "recall": 0.7907,
+          "fpr": 0.0
+        },
+        {
+          "threshold": 0.99,
+          "precision": 1.0,
+          "recall": 0.7674,
+          "fpr": 0.0
+        }
+      ],
+      "recall_at_1pct_fpr": {
+        "target_fpr": 0.01,
+        "threshold": 0.3567,
+        "recall": 0.907
+      }
+    }
+  }
+}

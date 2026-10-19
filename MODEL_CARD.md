@@ -134,7 +134,7 @@ The benign sets were written by the same author process as the training data, so
 ## Environmental Impact
 
 - **Training emissions**: ~0.4 kg CO2e (estimated, 4 hours on RTX 4050 at ~65W)
-- **Inference**: ~3.2 GB VRAM, ~35 ms P50 latency on RTX 4050
+- **Inference** (measured by `scripts/benchmark.py`, single prompt, 4-bit, RTX 4050 Laptop, idle GPU): median ~150–160 ms, peak allocated VRAM ~1.2 GB for both v1 and v2. Tail latency is noisy: p95 ranged from about 175 ms to 720 ms across clean runs, so treat it as a range. The earlier "~35 ms" figure was not measured and has been removed.
 - **Quantization**: 4-bit NF4 reduces model size from ~3 GB to ~0.9 GB for the base model
 
 ## Citation

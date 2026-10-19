@@ -1,0 +1,30 @@
+[
+  {
+    "model_dir": "models\\qwen-injection-detector\\best",
+    "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "n_warmup": 5,
+    "n_timed": 200,
+    "latency_ms": {
+      "p50": 151.91,
+      "p95": 180.63,
+      "p99": 186.96,
+      "mean": 153.42
+    },
+    "peak_allocated_mb": 1175.3,
+    "weights_allocated_mb": 1108.3
+  },
+  {
+    "model_dir": "models\\qwen-injection-detector-v2\\best",
+    "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "n_warmup": 5,
+    "n_timed": 200,
+    "latency_ms": {
+      "p50": 160.6,
+      "p95": 723.32,
+      "p99": 877.24,
+      "mean": 229.61
+    },
+    "peak_allocated_mb": 1175.3,
+    "weights_allocated_mb": 1108.3
+  }
+]

@@ -56,10 +56,16 @@ def run_train(config_path: str = "configs/training_config.yaml") -> bool:
     return True
 
 
-def run_calibrate() -> bool:
-    logger.info("Running temperature calibration...")
+def trained_best_dir(train_config_path: str) -> Path:
+    """Where train_qlora.py writes the new model: <training.output_dir>/best, from the config it was given."""
+    cfg = yaml.safe_load(Path(train_config_path).read_text())
+    return Path(cfg["training"]["output_dir"]) / "best"
+
+
+def run_calibrate(model_dir: Path) -> bool:
+    logger.info("Running temperature calibration on %s...", model_dir)
     result = subprocess.run(
-        [sys.executable, "scripts/calibrate.py"],
+        [sys.executable, "scripts/calibrate.py", "--model-dir", str(model_dir)],
         capture_output=False,
     )
     if result.returncode != 0:
@@ -152,10 +158,12 @@ def main():
         logger.info("Skipping training (--skip-train)")
         return
 
-    # train_qlora.py and calibrate.py both write to MODEL_DIR/best. Stash the live
-    # production model first so a retrain can never overwrite it.
+    # The new model lands in the training config's output_dir. If that is the production folder
+    # (the default config), stash production first so a retrain can never overwrite it.
+    trained = trained_best_dir(args.train_config)
+    overlaps_prod = trained.resolve() == BEST_DIR.resolve()
     prod_stash = MODEL_DIR / f".best_stash_{backup_suffix}"
-    had_prod = BEST_DIR.exists()
+    had_prod = overlaps_prod and BEST_DIR.exists()
     if had_prod:
         shutil.copytree(str(BEST_DIR), str(prod_stash))
 
@@ -173,7 +181,7 @@ def main():
                 shutil.copy2(str(backup_path), str(orig_path))
                 backup_path.unlink()
 
-    if not (run_train(args.train_config) and run_calibrate()):
+    if not (run_train(args.train_config) and run_calibrate(trained)):
         logger.error("Training/calibration failed — restoring production model and data splits")
         restore_prod()
         restore_splits()
@@ -181,7 +189,7 @@ def main():
 
     candidate_dir = MODEL_DIR / "candidates" / backup_suffix
     candidate_dir.parent.mkdir(parents=True, exist_ok=True)
-    shutil.move(str(BEST_DIR), str(candidate_dir))
+    shutil.move(str(trained), str(candidate_dir))
     restore_prod()
     logger.info("Candidate model saved to %s (production 'best' left untouched)", candidate_dir)
 
