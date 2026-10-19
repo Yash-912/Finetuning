@@ -62,6 +62,25 @@ def compute_nll(logits: torch.Tensor, labels: torch.Tensor, T: float) -> float:
     return nn.CrossEntropyLoss()(scaled, labels).item()
 
 
+def output_tag(model_dir: str) -> str:
+    """Filename suffix for outputs, derived from the model directory.
+
+    The production model (models/qwen-injection-detector/best) gets no suffix.
+    When the directory is named "best", the tag comes from its parent folder:
+    models/qwen-injection-detector-v2/best -> "_v2". Otherwise the directory name is used.
+    """
+    if Path(model_dir) == Path(MODEL_DIR):
+        return ""
+    path = Path(model_dir)
+    name = path.parent.name if path.name == "best" else path.name
+    base = Path(MODEL_DIR).parent.name  # "qwen-injection-detector"
+    if name == base:
+        return ""
+    if name.startswith(base + "-"):
+        name = name[len(base) + 1:]
+    return f"_{name}"
+
+
 def main():
     import argparse
     ap = argparse.ArgumentParser()
@@ -177,7 +196,7 @@ def main():
         "nll_values": {str(k): round(float(v), 4) for k, v in nll_values.items()},
         "val_size": len(labels),
     }
-    tag = "" if Path(MODEL_DIR_RUNTIME) == Path(MODEL_DIR) else f"_{Path(MODEL_DIR_RUNTIME).name}"
+    tag = output_tag(MODEL_DIR_RUNTIME)
     metrics_path = OUTPUT_DIR / f"calibration_metrics{tag}.json"
     with open(metrics_path, "w") as f:
         json.dump(metrics, f, indent=2)

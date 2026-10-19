@@ -154,6 +154,22 @@ The corpus is source-skewed: `no_robots` is all benign, `xtram1` and `gandalf` a
 
 Takeaways: the model generalizes better than a bag-of-words baseline (so it learned more than source style), but 98.7% is an in-distribution number. Folds trained on 4,000 samples for 1 epoch, uncalibrated, so these are lower bounds. The weakest case is benign text unlike the training mix: without `no_robots`, 43% of ordinary instructions are flagged. Next step: more diverse benign data.
 
+### v2 candidate (benign-diversity retrain)
+
+v1 (`models/qwen-injection-detector/best`) remains the production model. v2 (`models/qwen-injection-detector-v2/best`) is a candidate retrained with additional hand-authored benign prompts (code, multilingual, hard negatives, everyday text). It is not deployed.
+
+All numbers at threshold 0.85:
+
+| Set | Metric | v1 | v2 |
+|---|---|---|---|
+| Hand-written set, 112 prompts (58 benign, 54 attack) (`eval/handwritten_comparison.json`) | Attack recall | 96.3% | 96.3% |
+| | Benign FPR | 6.9% (4 of 58) | 0% (0 of 58) |
+| Benign held-out set (`eval/threshold_sweep_baseline.json`, `eval/threshold_sweep_v2.json`, `benign_test`) | Benign FPR | 4.5% | 0.0% |
+| Test split, n = 2,197 (same files, `test`) | FPR / recall | 0.41% / 94.8% | 0.34% / 95.1% |
+| Older 47-item adversarial set (same files, `adversarial`) | Attack recall | 93.0% | 86.0% |
+
+The benign sets were written by the same author process as the training data, so the 0% figures are likely optimistic. v2 is lower than v1 on the older 47-item adversarial set, so it is not a drop-in replacement.
+
 ### Adversarial Evaluation
 
 47 hand-crafted examples spanning 12 categories (direct injection, DAN/roleplay, hypothetical framing, Base64/ROT13/leetspeak, multi-language FR/ZH/HI/KO, system-prompt override, payload splitting, few-shot poisoning, benign lookalikes, zero-width/Unicode tricks, structured-data payloads, token smuggling). Run through the live middleware (`eval_adversarial.py`):

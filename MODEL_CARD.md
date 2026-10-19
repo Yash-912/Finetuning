@@ -85,6 +85,22 @@ Leave-one-source-out (train on the other four sources, test on the held-out one;
 
 The model beats the bag-of-words baseline on unseen sources, so it learns more than source style. But accuracy on unseen sources is far below 98.7%, and with `no_robots` removed it labels 43% of ordinary benign instructions as injections. Expect that kind of drop on traffic unlike the training mix, and validate on your own data.
 
+### v2 candidate (benign-diversity retrain)
+
+v1 (`models/qwen-injection-detector/best`) remains the production model. v2 (`models/qwen-injection-detector-v2/best`) is a candidate retrained with additional hand-authored benign prompts (code, multilingual, hard negatives, everyday text). It is not deployed.
+
+All numbers at threshold 0.85:
+
+| Set | Metric | v1 | v2 |
+|--------|--------|----|----|
+| Hand-written set, 112 prompts (58 benign, 54 attack) (`eval/handwritten_comparison.json`) | Attack recall | 96.3% | 96.3% |
+| | Benign FPR | 6.9% (4 of 58) | 0% (0 of 58) |
+| Benign held-out set (`eval/threshold_sweep_baseline.json`, `eval/threshold_sweep_v2.json`, `benign_test`) | Benign FPR | 4.5% | 0.0% |
+| Test split, n = 2,197 (same files, `test`) | FPR / recall | 0.41% / 94.8% | 0.34% / 95.1% |
+| Older 47-item adversarial set (same files, `adversarial`) | Attack recall | 93.0% | 86.0% |
+
+The benign sets were written by the same author process as the training data, so the 0% figures are likely optimistic. v2 is lower than v1 on the older 47-item adversarial set, so it is not a drop-in replacement.
+
 ### Baseline Comparison (deberta-v3-base-injection, zero-shot)
 
 | Metric | Zero-Shot | Fine-tuned (ours) |

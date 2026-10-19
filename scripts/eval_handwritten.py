@@ -19,7 +19,6 @@ import numpy as np
 import pandas as pd
 import torch
 import yaml
-
 from threshold_sweep import load_model, p_injection, recall_at_fpr, sweep
 
 EVAL = Path("data/eval_handwritten/eval.jsonl")
@@ -53,7 +52,7 @@ def main():
     args = ap.parse_args()
 
     verify_frozen()
-    df = pd.DataFrame([json.loads(l) for l in EVAL.read_text(encoding="utf-8").splitlines()])
+    df = pd.DataFrame([json.loads(line) for line in EVAL.read_text(encoding="utf-8").splitlines()])
     y = df["label"].to_numpy()
     cfg = yaml.safe_load(Path("configs/training_config.yaml").read_text())
     base, max_len = cfg["model"]["base_model_name"], cfg["model"]["max_length"]
