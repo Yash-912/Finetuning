@@ -1,0 +1,23 @@
+{
+  "seed": 2023,
+  "v2_train_rows": 19170,
+  "bipia_rows": 2967,
+  "bipia_injections": 1978,
+  "bipia_clean": 989,
+  "total_rows": 22137,
+  "total_label_counts": {
+    "0": 14315,
+    "1": 7822
+  },
+  "max_contexts_per_task": null,
+  "poisons_per_context": 2,
+  "train_contexts_dropped_as_test_overlap": {
+    "email": 11
+  },
+  "leakage_checks": {
+    "test_attack_prompts_in_train": 0,
+    "test_contexts_in_train": 0
+  },
+  "validation": "data/processed/val.parquet (unchanged, no BIPIA)",
+  "bipia_eval": "BIPIA test split, all attack categories (disjoint from train categories)"
+}
