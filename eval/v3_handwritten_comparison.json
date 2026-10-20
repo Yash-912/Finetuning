@@ -1,0 +1,164 @@
+{
+  "models\\qwen-injection-detector-v3\\best": {
+    "temperature": 2.6353,
+    "by_threshold": [
+      {
+        "threshold": 0.5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.6,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.7,
+        "precision": 1.0,
+        "recall": 0.9815,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.75,
+        "precision": 1.0,
+        "recall": 0.9815,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.8,
+        "precision": 1.0,
+        "recall": 0.9444,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.85,
+        "precision": 1.0,
+        "recall": 0.9259,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "precision": 1.0,
+        "recall": 0.8889,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "precision": 1.0,
+        "recall": 0.8704,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.98,
+        "precision": 1.0,
+        "recall": 0.8333,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "precision": 1.0,
+        "recall": 0.7222,
+        "fpr": 0.0
+      }
+    ],
+    "recall_at_1pct_fpr": {
+      "target_fpr": 0.01,
+      "threshold": 0.3607,
+      "recall": 1.0
+    },
+    "by_category_at_0.85": {
+      "authority/attack": {
+        "n": 4,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "code/benign": {
+        "n": 10,
+        "fpr": 0.0,
+        "flagged": 0
+      },
+      "direct/attack": {
+        "n": 8,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "encoded/attack": {
+        "n": 4,
+        "recall": 0.75,
+        "missed": 1
+      },
+      "everyday/benign": {
+        "n": 20,
+        "fpr": 0.0,
+        "flagged": 0
+      },
+      "exfiltration/attack": {
+        "n": 4,
+        "recall": 0.75,
+        "missed": 1
+      },
+      "few_shot/attack": {
+        "n": 4,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "goal_hijack/attack": {
+        "n": 4,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "hard_negative/benign": {
+        "n": 8,
+        "fpr": 0.0,
+        "flagged": 0
+      },
+      "hypothetical/attack": {
+        "n": 4,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "indirect/attack": {
+        "n": 4,
+        "recall": 0.5,
+        "missed": 2
+      },
+      "long_form/benign": {
+        "n": 4,
+        "fpr": 0.0,
+        "flagged": 0
+      },
+      "multilingual/benign": {
+        "n": 8,
+        "fpr": 0.0,
+        "flagged": 0
+      },
+      "multilingual/attack": {
+        "n": 6,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "payload_split/attack": {
+        "n": 3,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "roleplay/attack": {
+        "n": 6,
+        "recall": 1.0,
+        "missed": 0
+      },
+      "security_adjacent/benign": {
+        "n": 8,
+        "fpr": 0.0,
+        "flagged": 0
+      },
+      "token_smuggle/attack": {
+        "n": 3,
+        "recall": 1.0,
+        "missed": 0
+      }
+    }
+  }
+}
