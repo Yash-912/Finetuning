@@ -68,6 +68,8 @@ def compute_metrics(eval_pred):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/training_config.yaml")
+    parser.add_argument("--resume-from", default=None,
+                        help="checkpoint directory to resume training from (e.g. models/.../checkpoint-100)")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -188,7 +190,7 @@ def main():
     )
 
     logger.info("Starting training...")
-    trainer.train()
+    trainer.train(resume_from_checkpoint=args.resume_from)
 
     logger.info("Saving best model...")
     trainer.save_model(str(Path(train_cfg["output_dir"]) / "best"))
