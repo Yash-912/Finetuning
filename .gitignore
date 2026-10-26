@@ -37,3 +37,17 @@ models/**/*.bin
 data/loso/
 configs/loso/
 models/loso/
+
+# SQLite sidecar files from the review queue
+*.db-shm
+*.db-wal
+
+# Scratch benchmark output
+scratch_bench_*.json
+
+# Non-weight model files for experiment/candidate models (only the production adapter is tracked)
+models/qwen-injection-detector-v*/
+models/qwen-injection-detector/candidates/
+
+# Large versioned training sets (uploaded to Hugging Face separately)
+data/processed/v*/*.parquet
