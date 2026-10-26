@@ -1,0 +1,666 @@
+{
+  "threshold": 0.85,
+  "ranked_sets": [
+    "test",
+    "adversarial",
+    "handwritten",
+    "indirect",
+    "bipia"
+  ],
+  "order": [
+    "models\\qwen-injection-detector-v4\\best",
+    "models\\qwen-injection-detector-v3\\best",
+    "models\\qwen-injection-detector-v2\\best",
+    "models\\qwen-injection-detector\\best"
+  ],
+  "models": {
+    "models\\qwen-injection-detector\\best": {
+      "temperature": 3.5104,
+      "sets": {
+        "test": {
+          "n_attack": 737,
+          "n_benign": 1460,
+          "tp": 699,
+          "fp": 6,
+          "recall": 0.9484,
+          "recall_ci95": [
+            0.93,
+            0.9622
+          ],
+          "fpr": 0.0041,
+          "fpr_ci95": [
+            0.0019,
+            0.0089
+          ],
+          "auroc": 0.9979,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.343,
+            "recall": 0.981
+          }
+        },
+        "benign_test": {
+          "n_attack": 0,
+          "n_benign": 200,
+          "tp": 0,
+          "fp": 9,
+          "fpr": 0.045,
+          "fpr_ci95": [
+            0.0239,
+            0.0833
+          ]
+        },
+        "adversarial": {
+          "n_attack": 43,
+          "n_benign": 4,
+          "tp": 40,
+          "fp": 1,
+          "recall": 0.9302,
+          "recall_ci95": [
+            0.8139,
+            0.976
+          ],
+          "fpr": 0.25,
+          "fpr_ci95": [
+            0.0456,
+            0.6994
+          ],
+          "auroc": 0.9302,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9502,
+            "recall": 0.814
+          }
+        },
+        "handwritten": {
+          "n_attack": 54,
+          "n_benign": 58,
+          "tp": 52,
+          "fp": 4,
+          "recall": 0.963,
+          "recall_ci95": [
+            0.8746,
+            0.9898
+          ],
+          "fpr": 0.069,
+          "fpr_ci95": [
+            0.0271,
+            0.1643
+          ],
+          "auroc": 0.9914,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.999,
+            "recall": 0.8333
+          }
+        },
+        "indirect": {
+          "n_attack": 120,
+          "n_benign": 120,
+          "tp": 30,
+          "fp": 8,
+          "recall": 0.25,
+          "recall_ci95": [
+            0.1811,
+            0.3344
+          ],
+          "fpr": 0.0667,
+          "fpr_ci95": [
+            0.0342,
+            0.1261
+          ],
+          "auroc": 0.7602,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9758,
+            "recall": 0.1583
+          }
+        },
+        "indirect_long": {
+          "n_attack": 60,
+          "n_benign": 60,
+          "tp": 2,
+          "fp": 1,
+          "recall": 0.0333,
+          "recall_ci95": [
+            0.0092,
+            0.1136
+          ],
+          "fpr": 0.0167,
+          "fpr_ci95": [
+            0.0029,
+            0.0886
+          ],
+          "auroc": 0.6217,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9075,
+            "recall": 0.0333
+          }
+        },
+        "bipia": {
+          "n_attack": 8250,
+          "n_benign": 200,
+          "tp": 1214,
+          "fp": 3,
+          "recall": 0.1472,
+          "recall_ci95": [
+            0.1397,
+            0.155
+          ],
+          "fpr": 0.015,
+          "fpr_ci95": [
+            0.0051,
+            0.0432
+          ],
+          "source": "eval\\bipia_v1_results.json"
+        }
+      },
+      "ranking": {
+        "youden_j_by_set": {
+          "test": 0.9443,
+          "adversarial": 0.6802,
+          "handwritten": 0.894,
+          "indirect": 0.1833,
+          "bipia": 0.1322
+        },
+        "sets_ranked": [
+          "adversarial",
+          "bipia",
+          "handwritten",
+          "indirect",
+          "test"
+        ],
+        "score": 0.5668,
+        "pooled_fpr": 0.0152,
+        "pooled_benign": 2102
+      }
+    },
+    "models\\qwen-injection-detector-v2\\best": {
+      "temperature": 3.0866,
+      "sets": {
+        "test": {
+          "n_attack": 737,
+          "n_benign": 1460,
+          "tp": 701,
+          "fp": 5,
+          "recall": 0.9512,
+          "recall_ci95": [
+            0.9331,
+            0.9645
+          ],
+          "fpr": 0.0034,
+          "fpr_ci95": [
+            0.0015,
+            0.008
+          ],
+          "auroc": 0.9987,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.2888,
+            "recall": 0.9824
+          }
+        },
+        "benign_test": {
+          "n_attack": 0,
+          "n_benign": 200,
+          "tp": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.0188
+          ]
+        },
+        "adversarial": {
+          "n_attack": 43,
+          "n_benign": 4,
+          "tp": 37,
+          "fp": 0,
+          "recall": 0.8605,
+          "recall_ci95": [
+            0.7274,
+            0.9344
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.4899
+          ],
+          "auroc": 0.9651,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.3567,
+            "recall": 0.907
+          }
+        },
+        "handwritten": {
+          "n_attack": 54,
+          "n_benign": 58,
+          "tp": 52,
+          "fp": 0,
+          "recall": 0.963,
+          "recall_ci95": [
+            0.8746,
+            0.9898
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.0621
+          ],
+          "auroc": 0.9994,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.5089,
+            "recall": 0.9815
+          }
+        },
+        "indirect": {
+          "n_attack": 120,
+          "n_benign": 120,
+          "tp": 20,
+          "fp": 6,
+          "recall": 0.1667,
+          "recall_ci95": [
+            0.1106,
+            0.2435
+          ],
+          "fpr": 0.05,
+          "fpr_ci95": [
+            0.0231,
+            0.1048
+          ],
+          "auroc": 0.7085,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.967,
+            "recall": 0.1083
+          }
+        },
+        "indirect_long": {
+          "n_attack": 60,
+          "n_benign": 60,
+          "tp": 3,
+          "fp": 2,
+          "recall": 0.05,
+          "recall_ci95": [
+            0.0171,
+            0.137
+          ],
+          "fpr": 0.0333,
+          "fpr_ci95": [
+            0.0092,
+            0.1136
+          ],
+          "auroc": 0.5671,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9801,
+            "recall": 0.0
+          }
+        },
+        "bipia": {
+          "n_attack": 8250,
+          "n_benign": 200,
+          "tp": 811,
+          "fp": 3,
+          "recall": 0.0983,
+          "recall_ci95": [
+            0.0921,
+            0.1049
+          ],
+          "fpr": 0.015,
+          "fpr_ci95": [
+            0.0051,
+            0.0432
+          ],
+          "source": "eval\\bipia_v2_results.json"
+        }
+      },
+      "ranking": {
+        "youden_j_by_set": {
+          "test": 0.9478,
+          "adversarial": 0.8605,
+          "handwritten": 0.963,
+          "indirect": 0.1167,
+          "bipia": 0.0833
+        },
+        "sets_ranked": [
+          "adversarial",
+          "bipia",
+          "handwritten",
+          "indirect",
+          "test"
+        ],
+        "score": 0.5943,
+        "pooled_fpr": 0.0076,
+        "pooled_benign": 2102
+      }
+    },
+    "models\\qwen-injection-detector-v3\\best": {
+      "temperature": 2.6353,
+      "sets": {
+        "test": {
+          "n_attack": 737,
+          "n_benign": 1460,
+          "tp": 709,
+          "fp": 5,
+          "recall": 0.962,
+          "recall_ci95": [
+            0.9456,
+            0.9736
+          ],
+          "fpr": 0.0034,
+          "fpr_ci95": [
+            0.0015,
+            0.008
+          ],
+          "auroc": 0.9983,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.4881,
+            "recall": 0.9796
+          }
+        },
+        "benign_test": {
+          "n_attack": 0,
+          "n_benign": 200,
+          "tp": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.0188
+          ]
+        },
+        "adversarial": {
+          "n_attack": 43,
+          "n_benign": 4,
+          "tp": 36,
+          "fp": 0,
+          "recall": 0.8372,
+          "recall_ci95": [
+            0.7003,
+            0.9188
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.4899
+          ],
+          "auroc": 0.9709,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.0839,
+            "recall": 0.9535
+          }
+        },
+        "handwritten": {
+          "n_attack": 54,
+          "n_benign": 58,
+          "tp": 50,
+          "fp": 0,
+          "recall": 0.9259,
+          "recall_ci95": [
+            0.8245,
+            0.9708
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.0621
+          ],
+          "auroc": 1.0,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.3607,
+            "recall": 1.0
+          }
+        },
+        "indirect": {
+          "n_attack": 120,
+          "n_benign": 120,
+          "tp": 35,
+          "fp": 5,
+          "recall": 0.2917,
+          "recall_ci95": [
+            0.2178,
+            0.3784
+          ],
+          "fpr": 0.0417,
+          "fpr_ci95": [
+            0.0179,
+            0.0938
+          ],
+          "auroc": 0.7903,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9622,
+            "recall": 0.2083
+          }
+        },
+        "indirect_long": {
+          "n_attack": 60,
+          "n_benign": 60,
+          "tp": 13,
+          "fp": 4,
+          "recall": 0.2167,
+          "recall_ci95": [
+            0.1312,
+            0.3362
+          ],
+          "fpr": 0.0667,
+          "fpr_ci95": [
+            0.0262,
+            0.1593
+          ],
+          "auroc": 0.7201,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9667,
+            "recall": 0.0833
+          }
+        },
+        "bipia": {
+          "n_attack": 8250,
+          "n_benign": 200,
+          "tp": 7703,
+          "fp": 26,
+          "recall": 0.9337,
+          "recall_ci95": [
+            0.9281,
+            0.9389
+          ],
+          "fpr": 0.13,
+          "fpr_ci95": [
+            0.0903,
+            0.1837
+          ],
+          "source": "eval\\bipia_v3_results.json"
+        }
+      },
+      "ranking": {
+        "youden_j_by_set": {
+          "test": 0.9586,
+          "adversarial": 0.8372,
+          "handwritten": 0.9259,
+          "indirect": 0.25,
+          "bipia": 0.8037
+        },
+        "sets_ranked": [
+          "adversarial",
+          "bipia",
+          "handwritten",
+          "indirect",
+          "test"
+        ],
+        "score": 0.7551,
+        "pooled_fpr": 0.019,
+        "pooled_benign": 2102
+      }
+    },
+    "models\\qwen-injection-detector-v4\\best": {
+      "temperature": 2.7795,
+      "sets": {
+        "test": {
+          "n_attack": 737,
+          "n_benign": 1460,
+          "tp": 699,
+          "fp": 5,
+          "recall": 0.9484,
+          "recall_ci95": [
+            0.93,
+            0.9622
+          ],
+          "fpr": 0.0034,
+          "fpr_ci95": [
+            0.0015,
+            0.008
+          ],
+          "auroc": 0.9986,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.2465,
+            "recall": 0.9796
+          }
+        },
+        "benign_test": {
+          "n_attack": 0,
+          "n_benign": 200,
+          "tp": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.0188
+          ]
+        },
+        "adversarial": {
+          "n_attack": 43,
+          "n_benign": 4,
+          "tp": 39,
+          "fp": 0,
+          "recall": 0.907,
+          "recall_ci95": [
+            0.784,
+            0.9632
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.4899
+          ],
+          "auroc": 0.9884,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.0905,
+            "recall": 0.9767
+          }
+        },
+        "handwritten": {
+          "n_attack": 54,
+          "n_benign": 58,
+          "tp": 50,
+          "fp": 0,
+          "recall": 0.9259,
+          "recall_ci95": [
+            0.8245,
+            0.9708
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.0621
+          ],
+          "auroc": 0.9987,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.6675,
+            "recall": 0.963
+          }
+        },
+        "indirect": {
+          "n_attack": 120,
+          "n_benign": 120,
+          "tp": 33,
+          "fp": 4,
+          "recall": 0.275,
+          "recall_ci95": [
+            0.203,
+            0.3609
+          ],
+          "fpr": 0.0333,
+          "fpr_ci95": [
+            0.013,
+            0.0826
+          ],
+          "auroc": 0.7803,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.8766,
+            "recall": 0.2583
+          }
+        },
+        "indirect_long": {
+          "n_attack": 60,
+          "n_benign": 60,
+          "tp": 9,
+          "fp": 1,
+          "recall": 0.15,
+          "recall_ci95": [
+            0.081,
+            0.2611
+          ],
+          "fpr": 0.0167,
+          "fpr_ci95": [
+            0.0029,
+            0.0886
+          ],
+          "auroc": 0.6857,
+          "recall_at_1pct_fpr": {
+            "target_fpr": 0.01,
+            "threshold": 0.9011,
+            "recall": 0.0833
+          }
+        },
+        "bipia": {
+          "n_attack": 8250,
+          "n_benign": 200,
+          "tp": 7144,
+          "fp": 1,
+          "recall": 0.8659,
+          "recall_ci95": [
+            0.8584,
+            0.8731
+          ],
+          "fpr": 0.005,
+          "fpr_ci95": [
+            0.0009,
+            0.0278
+          ],
+          "source": "eval\\bipia_v4_results.json"
+        }
+      },
+      "ranking": {
+        "youden_j_by_set": {
+          "test": 0.945,
+          "adversarial": 0.907,
+          "handwritten": 0.9259,
+          "indirect": 0.2417,
+          "bipia": 0.8609
+        },
+        "sets_ranked": [
+          "adversarial",
+          "bipia",
+          "handwritten",
+          "indirect",
+          "test"
+        ],
+        "score": 0.7761,
+        "pooled_fpr": 0.0052,
+        "pooled_benign": 2102
+      }
+    }
+  }
+}

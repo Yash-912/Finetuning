@@ -1,4 +1,101 @@
 {
+  "models\\qwen-injection-detector\\best": {
+    "temperature": 3.5104,
+    "at_0.85": {
+      "recall": 0.25,
+      "fpr": 0.0667
+    },
+    "by_threshold": [
+      {
+        "threshold": 0.5,
+        "precision": 0.7818,
+        "recall": 0.3583,
+        "fpr": 0.1
+      },
+      {
+        "threshold": 0.6,
+        "precision": 0.7885,
+        "recall": 0.3417,
+        "fpr": 0.0917
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.7959,
+        "recall": 0.325,
+        "fpr": 0.0833
+      },
+      {
+        "threshold": 0.75,
+        "precision": 0.8,
+        "recall": 0.3,
+        "fpr": 0.075
+      },
+      {
+        "threshold": 0.8,
+        "precision": 0.7907,
+        "recall": 0.2833,
+        "fpr": 0.075
+      },
+      {
+        "threshold": 0.85,
+        "precision": 0.7895,
+        "recall": 0.25,
+        "fpr": 0.0667
+      },
+      {
+        "threshold": 0.9,
+        "precision": 0.8,
+        "recall": 0.2333,
+        "fpr": 0.0583
+      },
+      {
+        "threshold": 0.95,
+        "precision": 0.8519,
+        "recall": 0.1917,
+        "fpr": 0.0333
+      },
+      {
+        "threshold": 0.98,
+        "precision": 1.0,
+        "recall": 0.1583,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "precision": 1.0,
+        "recall": 0.125,
+        "fpr": 0.0
+      }
+    ],
+    "recall_at_1pct_fpr": {
+      "target_fpr": 0.01,
+      "threshold": 0.9758,
+      "recall": 0.1583
+    },
+    "attack_recall_by_position_at_0.85": {
+      "start": 0.2,
+      "middle": 0.2105,
+      "end": 0.2812,
+      "embedded_in_table_or_code": 0.4
+    },
+    "recall_by_category_at_0.85": {
+      "api_json/attack": 1.0,
+      "calendar_invite/attack": 0.143,
+      "code_comment/attack": 0.0,
+      "email/attack": 0.154,
+      "meeting_notes/attack": 0.0,
+      "news_article/attack": 0.0,
+      "pdf_text/attack": 0.25,
+      "product_review/attack": 0.0,
+      "rag_passage/attack": 0.714,
+      "recipe/attack": 0.333,
+      "resume/attack": 0.143,
+      "spreadsheet_export/attack": 0.444,
+      "support_ticket/attack": 0.111,
+      "tool_output/attack": 0.714,
+      "web_page/attack": 0.0
+    }
+  },
   "models\\qwen-injection-detector-v2\\best": {
     "temperature": 3.0866,
     "at_0.85": {
@@ -190,6 +287,103 @@
       "spreadsheet_export/attack": 0.333,
       "support_ticket/attack": 0.333,
       "tool_output/attack": 0.714,
+      "web_page/attack": 0.0
+    }
+  },
+  "models\\qwen-injection-detector-v4\\best": {
+    "temperature": 2.7795,
+    "at_0.85": {
+      "recall": 0.275,
+      "fpr": 0.0333
+    },
+    "by_threshold": [
+      {
+        "threshold": 0.5,
+        "precision": 0.8036,
+        "recall": 0.375,
+        "fpr": 0.0917
+      },
+      {
+        "threshold": 0.6,
+        "precision": 0.8163,
+        "recall": 0.3333,
+        "fpr": 0.075
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.8409,
+        "recall": 0.3083,
+        "fpr": 0.0583
+      },
+      {
+        "threshold": 0.75,
+        "precision": 0.8372,
+        "recall": 0.3,
+        "fpr": 0.0583
+      },
+      {
+        "threshold": 0.8,
+        "precision": 0.8537,
+        "recall": 0.2917,
+        "fpr": 0.05
+      },
+      {
+        "threshold": 0.85,
+        "precision": 0.8919,
+        "recall": 0.275,
+        "fpr": 0.0333
+      },
+      {
+        "threshold": 0.9,
+        "precision": 1.0,
+        "recall": 0.25,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "precision": 1.0,
+        "recall": 0.2,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.98,
+        "precision": 1.0,
+        "recall": 0.1583,
+        "fpr": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "precision": 1.0,
+        "recall": 0.125,
+        "fpr": 0.0
+      }
+    ],
+    "recall_at_1pct_fpr": {
+      "target_fpr": 0.01,
+      "threshold": 0.8757,
+      "recall": 0.2583
+    },
+    "attack_recall_by_position_at_0.85": {
+      "start": 0.2,
+      "middle": 0.2105,
+      "end": 0.4062,
+      "embedded_in_table_or_code": 0.3333
+    },
+    "recall_by_category_at_0.85": {
+      "api_json/attack": 1.0,
+      "calendar_invite/attack": 0.429,
+      "code_comment/attack": 0.0,
+      "email/attack": 0.154,
+      "meeting_notes/attack": 0.0,
+      "news_article/attack": 0.0,
+      "pdf_text/attack": 0.375,
+      "product_review/attack": 0.0,
+      "rag_passage/attack": 0.571,
+      "recipe/attack": 0.5,
+      "resume/attack": 0.286,
+      "spreadsheet_export/attack": 0.444,
+      "support_ticket/attack": 0.111,
+      "tool_output/attack": 0.571,
       "web_page/attack": 0.0
     }
   }

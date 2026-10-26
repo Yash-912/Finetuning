@@ -1,0 +1,268 @@
+{
+  "model_dir": "models\\qwen-injection-detector-v4\\best",
+  "temperature": 2.7795,
+  "threshold": 0.85,
+  "seed": 2023,
+  "prompts_per_category": 1,
+  "tasks": [
+    "email",
+    "table",
+    "code"
+  ],
+  "excluded_tasks": {
+    "qa": "context corpus not shipped by BIPIA",
+    "abstract": "context corpus not shipped by BIPIA"
+  },
+  "n_samples": 8450,
+  "overall": {
+    "n_attack": 8250,
+    "n_benign": 200,
+    "recall": 0.8659,
+    "fpr": 0.005
+  },
+  "by_threshold": [
+    {
+      "threshold": 0.5,
+      "precision": 0.9993,
+      "recall": 0.9008,
+      "fpr": 0.025
+    },
+    {
+      "threshold": 0.6,
+      "precision": 0.9997,
+      "recall": 0.8926,
+      "fpr": 0.01
+    },
+    {
+      "threshold": 0.7,
+      "precision": 0.9997,
+      "recall": 0.8847,
+      "fpr": 0.01
+    },
+    {
+      "threshold": 0.75,
+      "precision": 0.9999,
+      "recall": 0.8795,
+      "fpr": 0.005
+    },
+    {
+      "threshold": 0.8,
+      "precision": 0.9999,
+      "recall": 0.8737,
+      "fpr": 0.005
+    },
+    {
+      "threshold": 0.85,
+      "precision": 0.9999,
+      "recall": 0.8659,
+      "fpr": 0.005
+    },
+    {
+      "threshold": 0.9,
+      "precision": 0.9999,
+      "recall": 0.8558,
+      "fpr": 0.005
+    },
+    {
+      "threshold": 0.95,
+      "precision": 0.9999,
+      "recall": 0.8337,
+      "fpr": 0.005
+    },
+    {
+      "threshold": 0.98,
+      "precision": 1.0,
+      "recall": 0.8044,
+      "fpr": 0.0
+    },
+    {
+      "threshold": 0.99,
+      "precision": 1.0,
+      "recall": 0.7743,
+      "fpr": 0.0
+    }
+  ],
+  "recall_at_1pct_fpr": {
+    "target_fpr": 0.01,
+    "threshold": 0.5975,
+    "recall": 0.8926
+  },
+  "by_task": {
+    "email": {
+      "n_attack": 2250,
+      "n_benign": 50,
+      "recall": 0.8569,
+      "fpr": 0.02
+    },
+    "table": {
+      "n_attack": 4500,
+      "n_benign": 100,
+      "recall": 0.8309,
+      "fpr": 0.0
+    },
+    "code": {
+      "n_attack": 1500,
+      "n_benign": 50,
+      "recall": 0.9847,
+      "fpr": 0.0
+    }
+  },
+  "by_position": {
+    "end": {
+      "n_attack": 2750,
+      "n_benign": 0,
+      "recall": 0.7153
+    },
+    "start": {
+      "n_attack": 2750,
+      "n_benign": 0,
+      "recall": 0.9545
+    },
+    "middle": {
+      "n_attack": 2750,
+      "n_benign": 0,
+      "recall": 0.928
+    }
+  },
+  "by_attack_category": {
+    "Base Encoding": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8644
+    },
+    "Blocking Internet Connection": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    },
+    "Bringing Down Hosts and Servers (Denial of Service)": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    },
+    "Business Intelligence": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8444
+    },
+    "Compromising Computers": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    },
+    "Conversational Agent": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.6778
+    },
+    "Corrupting an Operating System": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    },
+    "Data Eavesdropping": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9867
+    },
+    "Emoji Substitution": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.88
+    },
+    "Encrypting Documents and Demanding Ransom (Ransomware)": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9733
+    },
+    "Entertainment": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8911
+    },
+    "Information Dissemination": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8867
+    },
+    "Introduce System Fingerprinting": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9333
+    },
+    "Keylogging": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    },
+    "Language Translation": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8667
+    },
+    "Marketing & Advertising": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8867
+    },
+    "Misinformation & Propaganda": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8933
+    },
+    "Research Assistance": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8667
+    },
+    "Reverse Text": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8756
+    },
+    "Scams & Fraud": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8933
+    },
+    "Screen Scraping": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    },
+    "Sentiment Analysis": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.6244
+    },
+    "Substitution Ciphers": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.8911
+    },
+    "Task Automation": {
+      "n_attack": 450,
+      "n_benign": 0,
+      "recall": 0.7511
+    },
+    "Traffic Analysis": {
+      "n_attack": 150,
+      "n_benign": 0,
+      "recall": 0.9933
+    }
+  },
+  "by_truncation": {
+    "truncated": {
+      "n_attack": 2170,
+      "n_benign": 43,
+      "recall": 0.653,
+      "fpr": 0.0
+    },
+    "not_truncated": {
+      "n_attack": 6080,
+      "n_benign": 157,
+      "recall": 0.9419,
+      "fpr": 0.0064
+    }
+  }
+}
