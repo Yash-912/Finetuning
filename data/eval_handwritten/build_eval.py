@@ -134,7 +134,7 @@ def build():
     for cat, text in INJECTION:
         rows.append({"text": text, "label": 1, "category": cat})
     out = Path(__file__).with_name("eval.jsonl")
-    with out.open("w", encoding="utf-8") as f:
+    with out.open("w", encoding="utf-8", newline="\n") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
     n_pos = sum(r["label"] for r in rows)

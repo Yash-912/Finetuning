@@ -1,0 +1,3 @@
+# Frozen eval sets and their checksums are hashed byte-for-byte, so git must never convert their line endings.
+data/eval_*/eval.jsonl text eol=lf
+data/eval_*/eval.sha256 text eol=lf
