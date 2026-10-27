@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     mode: str = "soft_flag"
     model_path: str = "models/qwen-injection-detector/best"
     max_length: int = 512
+    long_input: str = "window"  # "window": read inputs longer than max_length in overlapping windows; "truncate": first window only
+    window_stride: int = 256
+    max_windows: int = 128  # 0 means no cap
     host: str = "0.0.0.0"
     port: int = 8080
 

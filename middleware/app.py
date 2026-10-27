@@ -65,6 +65,8 @@ async def lifespan(app: FastAPI):
     logger.info("Starting middleware...")
     logger.info("Mode: %s | Threshold: %.2f", settings.mode, settings.threshold)
     logger.info("Model path: %s", settings.model_path)
+    logger.info("Long input: %s (window %d, stride %d, max windows %d)", settings.long_input,
+                settings.max_length, settings.window_stride, settings.max_windows)
 
     app.state.shadow_classifier = None
     app.state.review_queue = None
@@ -72,6 +74,9 @@ async def lifespan(app: FastAPI):
     classifier = InjectionClassifier(
         model_path=settings.model_path,
         max_length=settings.max_length,
+        long_input=settings.long_input,
+        window_stride=settings.window_stride,
+        max_windows=settings.max_windows,
     )
     app.state.classifier = classifier
 
