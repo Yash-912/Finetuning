@@ -9,7 +9,9 @@ Sets scored here (each model is loaded once):
   handwritten     frozen hand-written set (data/eval_handwritten)
   indirect        frozen indirect-injection set (data/eval_indirect)
   indirect_long   frozen long-document indirect set (data/eval_indirect_long): reported, not ranked
-BIPIA is too slow to rerun here, so its 0.85-threshold numbers are read from eval/bipia_*_results.json.
+BIPIA is too slow to rerun here, so its 0.85-threshold numbers are read from eval/bipia_*_results.json. A BIPIA
+result is used only if it was produced by the same adapter weights (sha256), the same temperature and the same
+--long-input mode as this run; otherwise BIPIA is left out and a warning is printed.
 
 Ranking rule (fixed before the numbers were produced, so it cannot be tuned to a preferred winner):
   score = mean Youden's J (recall - FPR at --threshold) over the ranked sets that contain both classes
@@ -36,7 +38,7 @@ import yaml
 from sklearn.metrics import roc_auc_score
 
 sys.path.insert(0, "scripts")
-from threshold_sweep import load_model, p_injection, recall_at_fpr
+from threshold_sweep import adapter_sha256, load_model, p_injection, recall_at_fpr
 
 DATA = Path("data/processed")
 FROZEN = {
@@ -91,11 +93,17 @@ def summarize(y: np.ndarray, p: np.ndarray, threshold: float) -> dict:
     return out
 
 
-def load_bipia(model_dir: Path, threshold: float) -> dict | None:
-    """Read the 0.85-threshold BIPIA numbers produced by eval_bipia.py for this model, if present."""
-    for path in Path("eval").glob("bipia_*_results.json"):
+def load_bipia(
+    adapter_hash: str, temperature: float, threshold: float, long_input: str, results_dir: Path = Path("eval")
+) -> dict | None:
+    """Read the BIPIA numbers eval_bipia.py produced for exactly this model and scoring mode, if present.
+
+    Models are matched by adapter hash, not folder path: a path can later hold a different model.
+    """
+    for path in sorted(results_dir.glob("bipia_*_results.json")):
         res = json.loads(path.read_text())
-        if Path(res["model_dir"]) != model_dir or res["threshold"] != threshold:
+        same_model = res.get("adapter_sha256") == adapter_hash and abs(res["temperature"] - temperature) < 1e-3
+        if not same_model or res["threshold"] != threshold or res.get("long_input", "truncate") != long_input:
             continue
         o = res["overall"]
         tp, fp = round(o["recall"] * o["n_attack"]), round(o["fpr"] * o["n_benign"])
@@ -126,9 +134,14 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("model_dirs", nargs="+")
     ap.add_argument("--threshold", type=float, default=0.85)
-    ap.add_argument("--out", type=Path, default=Path("eval/model_comparison.json"))
+    ap.add_argument("--long-input", choices=["truncate", "window"], default="truncate",
+                    help="truncate: first 512 tokens only (original); window: read whole texts in overlapping windows")
+    ap.add_argument("--out", type=Path, default=None, help="default eval/model_comparison[_window].json")
     args = ap.parse_args()
 
+    windowed = args.long_input == "window"
+    if args.out is None:
+        args.out = Path("eval/model_comparison_window.json" if windowed else "eval/model_comparison.json")
     sets = load_sets()
     cfg = yaml.safe_load(Path("configs/training_config.yaml").read_text())
     base, max_len = cfg["model"]["base_model_name"], cfg["model"]["max_length"]
@@ -140,20 +153,25 @@ def main() -> None:
         tok, model, device = load_model(md, base)
         results = {}
         for name, df in sets.items():
-            p = p_injection(tok, model, device, df["text"].tolist(), temperature, max_len)
+            p = p_injection(tok, model, device, df["text"].tolist(), temperature, max_len, windowed=windowed)
             results[name] = summarize(df["label"].to_numpy(), p, args.threshold)
         del model
         torch.cuda.empty_cache()
-        bipia = load_bipia(md, args.threshold)
+        bipia = load_bipia(adapter_sha256(md), temperature, args.threshold, args.long_input)
         if bipia:
             results["bipia"] = bipia
         else:
-            print(f"warning: no BIPIA result at threshold {args.threshold} for {md}", file=sys.stderr)
-        models[str(md)] = {"temperature": round(float(temperature), 4), "sets": results, "ranking": score(results)}
+            print(f"warning: no matching BIPIA result for {md} ({args.long_input}); BIPIA left out", file=sys.stderr)
+        models[str(md)] = {
+            "adapter_sha256": adapter_sha256(md),
+            "temperature": round(float(temperature), 4),
+            "sets": results,
+            "ranking": score(results),
+        }
         print(md, models[str(md)]["ranking"]["score"], models[str(md)]["ranking"]["pooled_fpr"], flush=True)
 
     order = sorted(models, key=lambda m: (-models[m]["ranking"]["score"], models[m]["ranking"]["pooled_fpr"]))
-    report = {"threshold": args.threshold, "ranked_sets": RANKED, "order": order, "models": models}
+    report = {"threshold": args.threshold, "long_input": args.long_input, "ranked_sets": RANKED, "order": order, "models": models}
     args.out.parent.mkdir(exist_ok=True)
     args.out.write_text(json.dumps(report, indent=2))
     print(f"wrote {args.out}; best: {order[0]}")

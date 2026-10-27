@@ -264,5 +264,8 @@
       "recall": 0.9419,
       "fpr": 0.0064
     }
-  }
+  },
+  "adapter_sha256": "81d761550f677e08fe55eb69d3cb5025cbb9f9f1be1006ab7cc487c3b34baee0",
+  "long_input": "truncate",
+  "identity_backfilled_from": "models/qwen-injection-detector-v4/best"
 }

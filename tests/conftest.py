@@ -15,7 +15,7 @@ class FakeClassifier:
     A model path containing 'shadow' always predicts benign, so shadow/prod can disagree.
     """
 
-    def __init__(self, model_path: str = "", max_length: int = 512):
+    def __init__(self, model_path: str = "", max_length: int = 512, **_kwargs):
         self.model_path = model_path
         self.is_ready = True
         self.calls: list[str] = []

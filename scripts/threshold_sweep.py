@@ -16,7 +16,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -26,8 +28,17 @@ import yaml
 from peft import PeftModel
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, BitsAndBytesConfig
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from middleware.windowing import DEFAULT_MAX_WINDOWS, DEFAULT_STRIDE, score_windowed
+
 DATA = Path("data/processed")
 THRESHOLDS = [0.5, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.98, 0.99]
+
+
+def adapter_sha256(model_dir: Path) -> str:
+    """Identity of a trained model: the hash of its adapter weights, so a result cannot be matched to another
+    model that happens to sit at the same folder path."""
+    return hashlib.sha256((Path(model_dir) / "adapter_model.safetensors").read_bytes()).hexdigest()
 
 
 def load_model(model_dir: Path, base_name: str):
@@ -46,7 +57,22 @@ def load_model(model_dir: Path, base_name: str):
 
 
 @torch.no_grad()
-def p_injection(tok, model, device, texts: list[str], temperature: float, max_length: int) -> np.ndarray:
+def p_injection(
+    tok, model, device, texts: list[str], temperature: float, max_length: int,
+    windowed: bool = False, stride: int = DEFAULT_STRIDE, max_windows: int = DEFAULT_MAX_WINDOWS,
+) -> np.ndarray:
+    """P(injection) per text. windowed=False reads only the first max_length tokens (the original behaviour);
+    windowed=True reads the whole text in overlapping windows and keeps each text's highest window score."""
+    if windowed:
+        def score_fn(batch_ids):
+            enc = tok.pad({"input_ids": batch_ids}, return_tensors="pt")
+            logits = model(**{k: v.to(device) for k, v in enc.items()}).logits.float().cpu()
+            return torch.softmax(logits / temperature, dim=-1)[:, 1].numpy()
+
+        ids = [x or [tok.pad_token_id] for x in tok(texts)["input_ids"]]
+        scores, _ = score_windowed(ids, score_fn, window=max_length, stride=stride, max_windows=max_windows)
+        return scores
+
     order = np.argsort([len(t) for t in texts])
     out = np.zeros(len(texts))
     for i in range(0, len(texts), 16):

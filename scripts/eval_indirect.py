@@ -23,10 +23,12 @@ DEFAULT_SET_DIR = Path("data/eval_indirect")
 POSITIONS = ["start", "middle", "end", "embedded_in_table_or_code"]
 
 
-def output_path(set_dir: Path) -> Path:
-    """eval/indirect_comparison.json for the short set, eval/indirect_long_comparison.json for the long one."""
+def output_path(set_dir: Path, long_input: str = "truncate") -> Path:
+    """eval/indirect_comparison.json for the short set, eval/indirect_long_comparison.json for the long one.
+    Windowed runs get a _window suffix so they never overwrite the truncated results."""
     suffix = set_dir.name.removeprefix("eval_indirect")
-    return Path("eval") / f"indirect{suffix}_comparison.json"
+    tag = "_window" if long_input == "window" else ""
+    return Path("eval") / f"indirect{suffix}_comparison{tag}.json"
 
 
 def verify_frozen(set_dir: Path) -> Path:
@@ -37,12 +39,14 @@ def verify_frozen(set_dir: Path) -> Path:
     return eval_path
 
 
-def score_model(df: pd.DataFrame, model_dir: Path, base: str, max_len: int, threshold: float) -> dict:
+def score_model(
+    df: pd.DataFrame, model_dir: Path, base: str, max_len: int, threshold: float, windowed: bool = False
+) -> dict:
     y = df["label"].to_numpy()
     temp_path = model_dir / "temperature.pt"
     temperature = torch.load(str(temp_path)).item() if temp_path.exists() else 1.0
     tok, model, device = load_model(model_dir, base)
-    p = p_injection(tok, model, device, df["text"].tolist(), temperature, max_len)
+    p = p_injection(tok, model, device, df["text"].tolist(), temperature, max_len, windowed=windowed)
     del model
     torch.cuda.empty_cache()
     pred = p >= threshold
@@ -70,6 +74,8 @@ def main() -> None:
     ap.add_argument("model_dirs", nargs="+", help="model directories to score")
     ap.add_argument("--set-dir", type=Path, default=DEFAULT_SET_DIR, help="frozen eval set directory")
     ap.add_argument("--threshold", type=float, default=0.85)
+    ap.add_argument("--long-input", choices=["truncate", "window"], default="truncate",
+                    help="truncate: read only the first 512 tokens; window: read the whole text")
     args = ap.parse_args()
 
     eval_path = verify_frozen(args.set_dir)
@@ -79,9 +85,9 @@ def main() -> None:
 
     out = {}
     for model_dir in map(Path, args.model_dirs):
-        out[str(model_dir)] = score_model(df, model_dir, base, max_len, args.threshold)
+        out[str(model_dir)] = score_model(df, model_dir, base, max_len, args.threshold, args.long_input == "window")
         print(model_dir, out[str(model_dir)][f"at_{args.threshold}"], flush=True)
-    dest = output_path(args.set_dir)
+    dest = output_path(args.set_dir, args.long_input)
     dest.write_text(json.dumps(out, indent=2))
     print(f"wrote {dest}")
 

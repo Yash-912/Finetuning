@@ -25,7 +25,7 @@ import pandas as pd
 import torch
 import yaml
 from nltk.tokenize.punkt import PunktSentenceTokenizer
-from threshold_sweep import load_model, p_injection, recall_at_fpr, sweep
+from threshold_sweep import adapter_sha256, load_model, p_injection, recall_at_fpr, sweep
 
 # task -> (context file, attack file), relative to BIPIA's benchmark/ directory
 TASKS = {
@@ -101,6 +101,8 @@ def main():
                     help="attack prompts sampled per attack category per context (BIPIA has 5 per category)")
     ap.add_argument("--seed", type=int, default=2023)
     ap.add_argument("--tag", default="bipia")
+    ap.add_argument("--long-input", choices=["truncate", "window"], default="truncate",
+                    help="truncate: read only the first 512 tokens (original behaviour); window: read the whole text")
     args = ap.parse_args()
 
     cfg = yaml.safe_load(Path("configs/training_config.yaml").read_text())
@@ -117,7 +119,7 @@ def main():
 
     # Contexts longer than the model's window are cut at max_length; flag them so recall can be split by it
     df["truncated"] = [len(tok(t)["input_ids"]) > max_len for t in df["text"]]
-    p = p_injection(tok, model, device, df["text"].tolist(), temperature, max_len)
+    p = p_injection(tok, model, device, df["text"].tolist(), temperature, max_len, windowed=args.long_input == "window")
     del model
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -126,6 +128,8 @@ def main():
     everything = np.ones(len(df), dtype=bool)
     results = {
         "model_dir": str(model_dir),
+        "adapter_sha256": adapter_sha256(model_dir),
+        "long_input": args.long_input,
         "temperature": round(float(temperature), 4),
         "threshold": THRESHOLD,
         "seed": args.seed,
