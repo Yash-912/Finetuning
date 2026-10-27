@@ -1,0 +1,29 @@
+{
+  "mode": "hard_block",
+  "model": "models/qwen-injection-detector/best",
+  "shadow_model": "models/qwen-injection-detector-v1/best",
+  "n_requests": 112,
+  "attack_detected": 50,
+  "attacks": 54,
+  "benign_flagged": 0,
+  "benign": 58,
+  "blocked_count": 50,
+  "unexpected_statuses": [],
+  "benign_forwarded_with_upstream_body": 58,
+  "review_queue_rows": 112,
+  "review_queue_rows_with_shadow": 112,
+  "shadow_agreements": 107.0,
+  "shadow_disagreements": 5.0,
+  "latency_ms": {
+    "p50": 1337.1,
+    "p95": 1787.5,
+    "p99": 1948.2
+  },
+  "checks": {
+    "no unexpected statuses": true,
+    "every request logged": true,
+    "every row has a shadow prediction": true,
+    "shadow counters add up": true,
+    "benign passes reach upstream unchanged": true
+  }
+}
