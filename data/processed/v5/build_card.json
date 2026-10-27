@@ -1,0 +1,39 @@
+{
+  "seed": 2023,
+  "window_tokens": 512,
+  "poisons_per_context": 2,
+  "v2_train_rows": 19170,
+  "bipia_train_rows": 1848,
+  "bipia_train_injections": 1232,
+  "bipia_train_clean": 616,
+  "bipia_dev_rows": 255,
+  "bipia_dev_injections": 170,
+  "bipia_dev_clean": 85,
+  "rows_cropped_to_window": {
+    "train": 772,
+    "dev": 86
+  },
+  "train_total_rows": 21018,
+  "val_total_rows": 2651,
+  "contexts_dropped_as_test_overlap": {
+    "email": 11,
+    "table": 0,
+    "code": 0
+  },
+  "train_categories_dropped_for_sharing_a_name_with_test": [
+    "Language Translation"
+  ],
+  "train_attack_categories": 17,
+  "dev_attack_categories": 7,
+  "leakage_checks": {
+    "train_dev_context_overlap": 0,
+    "train_test_context_overlap": 0,
+    "dev_test_context_overlap": 0,
+    "train_dev_prompt_overlap": 0,
+    "train_test_prompt_overlap": 0,
+    "dev_test_prompt_overlap": 0,
+    "train_dev_category_overlap": 0,
+    "train_test_category_overlap": 0
+  },
+  "test": "BIPIA test split, unchanged; to be reported once (see eval_bipia.py --final)"
+}

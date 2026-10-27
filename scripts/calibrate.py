@@ -85,6 +85,8 @@ def main():
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument("--model-dir", default=MODEL_DIR)
+    ap.add_argument("--val-path", default=VAL_PATH,
+                    help="validation parquet; use data/processed/v5/val.parquet to include indirect (BIPIA dev) samples")
     args = ap.parse_args()
     global MODEL_DIR_RUNTIME
     MODEL_DIR_RUNTIME = args.model_dir
@@ -125,8 +127,8 @@ def main():
     model.eval()
     logger.info("Model loaded. Parameters: %s", f"{sum(p.numel() for p in model.parameters()):,}")
 
-    logger.info("Loading validation data: %s", VAL_PATH)
-    val_df = pd.read_parquet(VAL_PATH)
+    logger.info("Loading validation data: %s", args.val_path)
+    val_df = pd.read_parquet(args.val_path)
     logger.info("Validation samples: %d", len(val_df))
 
     val_ds = Dataset.from_pandas(val_df[["text", "label"]])
@@ -195,6 +197,7 @@ def main():
         "nll_after": round(float(result.fun), 4),
         "nll_values": {str(k): round(float(v), 4) for k, v in nll_values.items()},
         "val_size": len(labels),
+        "val_path": args.val_path,
     }
     tag = output_tag(MODEL_DIR_RUNTIME)
     metrics_path = OUTPUT_DIR / f"calibration_metrics{tag}.json"
