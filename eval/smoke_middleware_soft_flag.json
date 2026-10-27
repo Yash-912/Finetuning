@@ -1,0 +1,33 @@
+{
+  "mode": "soft_flag",
+  "model": "models/qwen-injection-detector/best",
+  "shadow_model": "models/qwen-injection-detector-v1/best",
+  "n_requests": 112,
+  "attack_detected": 50,
+  "attacks": 54,
+  "benign_flagged": 0,
+  "benign": 58,
+  "blocked_count": 0,
+  "unexpected_statuses": [],
+  "benign_forwarded_with_upstream_body": 58,
+  "review_queue_rows": 112,
+  "review_queue_rows_with_shadow": 112,
+  "shadow_agreements": 107.0,
+  "shadow_disagreements": 5.0,
+  "server_side_production_predict_mean_ms": 350.4,
+  "latency_ms": {
+    "p50": 325.0,
+    "p95": 1635.2,
+    "p99": 1905.0
+  },
+  "checks": {
+    "no unexpected statuses": true,
+    "every request logged": true,
+    "every row has a shadow prediction": true,
+    "shadow counters add up": true,
+    "benign passes reach upstream unchanged": true,
+    "soft_flag never blocks": true,
+    "every request forwarded with the upstream body": true,
+    "flagged prompts carry the X-Injection-Detected header": true
+  }
+}

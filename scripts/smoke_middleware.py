@@ -164,6 +164,11 @@ def main() -> None:
         "benign passes reach upstream unchanged": report["benign_forwarded_with_upstream_body"] == report["benign"] - report["benign_flagged"]
         if args.mode == "hard_block" else True,
     }
+    if args.mode == "soft_flag":
+        # soft_flag must never block: every request, flagged or not, is forwarded and its upstream reply returned intact
+        checks["soft_flag never blocks"] = report["blocked_count"] == 0
+        checks["every request forwarded with the upstream body"] = all(x["forwarded_body_ok"] for x in results)
+        checks["flagged prompts carry the X-Injection-Detected header"] = int(sum(x["flag_header"] for x in results)) == int(detected.sum())
     report["checks"] = checks
     args.out.parent.mkdir(exist_ok=True)
     args.out.write_text(json.dumps(report, indent=2))
